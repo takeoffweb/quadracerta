@@ -1,125 +1,200 @@
-/* ============================================================
-   QUADRA CERTA — script.js
-   ============================================================ */
+/* =============================================
+   QUADRA CERTA — SCRIPTS
+   ============================================= */
+
+var IMAGENS = {
+  hero: [
+    'img/hero-01.jpg',
+    'img/hero-02.jpg',
+    'img/hero-03.jpg',
+    'img/hero-04.jpg',
+    'img/hero-05.jpg'
+  ],
+  servicos: [
+    'img/servico-01.png',
+    'img/servico-02.png'
+  ],
+  tq10: [
+    { src: 'img/1tq10.jpg', duration: 6000 },
+    { src: 'img/2tq10.png', duration: 3000 }
+  ],
+  ebooks: 'img/depois-01.jpeg',
+  treinamentos: [
+    'img/detalhe-01.jpeg',
+    'img/detalhe-02.jpeg'
+  ],
+  sobre: 'img/hero-04.png'
+};
 
 (function () {
   'use strict';
 
-  /* ===================================================
-     1. NAV — adiciona sombra ao rolar mais de 60px
-     =================================================== */
-  var nav = document.getElementById('nav');
+  /* ---- INJEÇÃO DE IMAGENS ---- */
 
-  function handleNavScroll() {
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  }
-
-  window.addEventListener('scroll', handleNavScroll, { passive: true });
-
-
-  /* ===================================================
-     2. SERVIÇOS — efeito sticky stacking
-     Quando o card seguinte atinge top:120px, o card
-     anterior recebe scale(0.97) translateY(-14px)
-     =================================================== */
-  var serviceCards = document.querySelectorAll('.service-card');
-
-  function isMobile() {
-    return window.innerWidth <= 768;
-  }
-
-  function handleServicesScroll() {
-    if (isMobile()) return;
-
-    serviceCards.forEach(function (card, i) {
-      if (i < serviceCards.length - 1) {
-        var nextCard = serviceCards[i + 1];
-        var nextTop = nextCard.getBoundingClientRect().top;
-
-        if (nextTop <= 124) {
-          card.classList.add('card-behind');
-        } else {
-          card.classList.remove('card-behind');
-        }
-      }
-    });
-  }
-
-  window.addEventListener('scroll', handleServicesScroll, { passive: true });
-
-  window.addEventListener('resize', function () {
-    if (isMobile()) {
-      serviceCards.forEach(function (card) {
-        card.classList.remove('card-behind');
-        card.style.transform = '';
-      });
-    }
+  var heroSlider = document.getElementById('hero-slider');
+  IMAGENS.hero.forEach(function (src, i) {
+    var div = document.createElement('div');
+    div.className = 'hero-slide' + (i === 0 ? ' active' : '');
+    div.style.backgroundImage = 'url(' + src + ')';
+    heroSlider.appendChild(div);
   });
 
+  var servicesGallery = document.getElementById('services-gallery');
+  IMAGENS.servicos.forEach(function (src) {
+    var img = document.createElement('img');
+    img.src = src;
+    img.loading = 'lazy';
+    servicesGallery.appendChild(img);
+  });
 
-  /* ===================================================
-     3. INTERSECTION OBSERVER — animações fade
-     Seleciona .fade-up, .fade-left, .fade-right
-     Aplica .visible quando entram na viewport (0.15)
-     data-delay controla o atraso da transição
-     =================================================== */
-  var animatables = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
+  var tq10Carousel = document.getElementById('tq10-carousel');
+  IMAGENS.tq10.forEach(function (item, i) {
+    var div = document.createElement('div');
+    div.className = 'tq10-slide' + (i === 0 ? ' active' : '');
+    var img = document.createElement('img');
+    img.src = item.src;
+    img.dataset.duration = item.duration;
+    img.loading = 'lazy';
+    div.appendChild(img);
+    tq10Carousel.appendChild(div);
+  });
 
-  if (!('IntersectionObserver' in window)) {
-    /* Fallback para navegadores sem suporte */
-    animatables.forEach(function (el) {
-      el.style.opacity = '1';
-      el.style.transform = 'none';
+  var ebooksVisual = document.getElementById('ebooks-visual');
+  var ebooksImg = document.createElement('img');
+  ebooksImg.src = IMAGENS.ebooks;
+  ebooksImg.loading = 'lazy';
+  ebooksVisual.appendChild(ebooksImg);
+
+  IMAGENS.treinamentos.forEach(function (src, i) {
+    var img = document.getElementById('treinamento-img-' + i);
+    if (img) img.src = src;
+  });
+
+  var sobreImg = document.getElementById('sobre-img');
+  if (sobreImg) sobreImg.src = IMAGENS.sobre;
+
+  /* ---- HEADER: efeito scroll ---- */
+  var header = document.getElementById('header');
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }, { passive: true });
+
+  /* ---- MENU MOBILE ---- */
+  var hamburger  = document.getElementById('hamburger');
+  var mobileNav  = document.getElementById('mobile-nav');
+
+  hamburger.addEventListener('click', function () {
+    var isOpen = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  mobileNav.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
     });
-  } else {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var el = entry.target;
-          var delay = el.dataset.delay ? parseInt(el.dataset.delay, 10) : 0;
+  });
 
-          el.style.transitionDelay = delay + 'ms';
-          el.classList.add('visible');
+  /* ---- FORMULARIO → WHATSAPP ---- */
+  var form = document.getElementById('contact-form');
 
-          observer.unobserve(el);
-        }
-      });
-    }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -32px 0px'
-    });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-    animatables.forEach(function (el) {
-      observer.observe(el);
-    });
+    var nome     = document.getElementById('nome').value.trim();
+    var tipo     = document.getElementById('tipo').value;
+    var cidade   = document.getElementById('cidade').value.trim();
+    var mensagem = document.getElementById('mensagem').value.trim();
+
+    var msg = 'Olá, vim pelo site da Quadra Certa e gostaria de solicitar um orçamento.';
+    if (nome)     msg += '\n\nNome: '           + nome;
+    if (tipo)     msg += '\nTipo de quadra: '   + tipo;
+    if (cidade)   msg += '\nCidade: '           + cidade;
+    if (mensagem) msg += '\nMensagem: '         + mensagem;
+
+    window.open(
+      'https://wa.me/5554994945556?text=' + encodeURIComponent(msg),
+      '_blank',
+      'noopener,noreferrer'
+    );
+  });
+
+  /* ---- HERO SLIDER ---- */
+  var heroSlides = document.querySelectorAll('.hero-slide');
+  var heroIndex  = 0;
+
+  if (heroSlides.length > 1) {
+    setInterval(function () {
+      heroSlides[heroIndex].classList.remove('active');
+      heroIndex = (heroIndex + 1) % heroSlides.length;
+      heroSlides[heroIndex].classList.add('active');
+    }, 5000);
   }
 
+  /* ---- FILTRO DE PRODUTOS ---- */
+  var filterBtns   = document.querySelectorAll('.filter-btn');
+  var productCards = document.querySelectorAll('.product-card');
 
-  /* ===================================================
-     4. SMOOTH SCROLL — cliques em âncoras internas
-     Compensa a altura do nav sticky
-     =================================================== */
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var filter = btn.dataset.filter;
+
+      productCards.forEach(function (card) {
+        var match = filter === 'all' || card.dataset.category === filter;
+        if (match) {
+          card.style.display = '';
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              card.classList.remove('product-hidden');
+            });
+          });
+        } else {
+          card.classList.add('product-hidden');
+          setTimeout(function () {
+            if (card.classList.contains('product-hidden')) {
+              card.style.display = 'none';
+            }
+          }, 260);
+        }
+      });
+    });
+  });
+
+  /* ---- TQ-10 CARROSSEL ---- */
+  var tq10Slides = document.querySelectorAll('.tq10-slide');
+  if (tq10Slides.length > 1) {
+    var tq10Index = 0;
+    function tq10Next() {
+      tq10Slides[tq10Index].classList.remove('active');
+      tq10Index = (tq10Index + 1) % tq10Slides.length;
+      tq10Slides[tq10Index].classList.add('active');
+      var dur = parseInt(tq10Slides[tq10Index].querySelector('img').dataset.duration, 10);
+      setTimeout(tq10Next, dur);
+    }
+    var firstDur = parseInt(tq10Slides[0].querySelector('img').dataset.duration, 10);
+    setTimeout(tq10Next, firstDur);
+  }
+
+  /* ---- SCROLL SUAVE (fallback para browsers antigos) ---- */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
       var href = this.getAttribute('href');
-      if (!href || href === '#') return;
-
+      if (href === '#') return;
       var target = document.querySelector(href);
-      if (!target) return;
-
-      e.preventDefault();
-
-      var navHeight = nav ? nav.offsetHeight : 0;
-      var targetTop = target.getBoundingClientRect().top + window.scrollY - navHeight;
-
-      window.scrollTo({
-        top: targetTop,
-        behavior: 'smooth'
-      });
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
     });
   });
 
