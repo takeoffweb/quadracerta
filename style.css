@@ -102,9 +102,11 @@ section { padding: 6rem 0; }
   border: 2px solid rgba(255,255,255,0.35);
 }
 .btn-outline:hover {
+  background: rgba(196, 98, 45, 0.18);
   border-color: var(--accent);
-  color: var(--accent);
+  color: #fff;
   transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(196, 98, 45, 0.22);
 }
 .btn-whatsapp {
   background: #25D366;
@@ -653,17 +655,19 @@ section { padding: 6rem 0; }
 }
 
 .cta-forte-inner h2 {
-  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-  margin-bottom: 1.25rem;
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  margin-bottom: 1.5rem;
   color: #fff;
-  line-height: 1.2;
+  line-height: 1.15;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
 }
 
 .cta-forte-inner p {
-  color: rgba(255,255,255,0.85);
-  font-size: 1.05rem;
+  color: #fff;
+  font-size: clamp(1.1rem, 1.4vw, 1.25rem);
   margin-bottom: 2.5rem;
-  line-height: 1.75;
+  line-height: 1.7;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .cta-forte-btns {
@@ -1190,8 +1194,12 @@ section { padding: 6rem 0; }
   section { padding: 4rem 0; }
 
   .nav,
-  .header-actions .btn-primary { display: none; }
+  .header-actions .btn-primary,
+  .header-actions > a { display: none; }
   .hamburger { display: block; }
+
+  .header { width: calc(100% - 1.5rem); padding: 0.5rem 1rem; }
+  .header-inner { padding: 0; }
 
   .services-grid    { grid-template-columns: 1fr; }
   .services-gallery { grid-template-columns: 1fr; }
@@ -1212,8 +1220,20 @@ section { padding: 6rem 0; }
   .hero-right { display: none; }
   .hero-content h1 { font-size: 2.4rem; }
   .hero-buttons { flex-direction: column; }
-  .hero-buttons .btn { text-align: center; }
+  .hero-buttons .btn { text-align: center; justify-content: center; }
   .about-stats { flex-wrap: wrap; gap: 1.5rem; }
+
+  /* CTA Forte */
+  #cta-forte { padding: 4.5rem 0; }
+  .cta-forte-inner { padding: 0 1.25rem; }
+  .cta-forte-btns { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+  .cta-forte-btns .btn { width: 100%; justify-content: center; }
+
+  /* Filtros de produto */
+  .filter-btns { flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+
+  /* Formulário de contato */
+  .contact-inner { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
@@ -1223,4 +1243,24 @@ section { padding: 6rem 0; }
     padding-top: calc(var(--header-h) + 3rem);
     margin-left: 0;
   }
+
+  /* Container com mais respiro lateral */
+  .container { padding: 0 1rem; }
+
+  /* CTA — tipografia e bolinha menores no celular pequeno */
+  #cta-forte { padding: 3.5rem 0; }
+  .cta-forte-inner h2 { font-size: 1.9rem; line-height: 1.2; }
+  .cta-forte-inner h2 br { display: none; }
+  .cta-forte-inner p { font-size: 1rem; line-height: 1.6; }
+  .cta-forte-inner p br { display: none; }
+  .cta-ball { width: 10px; height: 10px; }
+  .cta-ball-shadow { width: 8px; height: 3px; }
+
+  /* Hero — título mais compacto */
+  .hero-content h1 { font-size: 2rem; }
+  .hero-badge { font-size: 0.7rem; padding: 0.35rem 0.75rem; }
+
+  /* Botão flutuante WhatsApp menor */
+  .float-wa { width: 52px; height: 52px; bottom: 1rem; right: 1rem; }
+  .float-wa svg { width: 24px; height: 24px; }
 }
