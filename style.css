@@ -1405,7 +1405,11 @@ section { padding: 6rem 0; }
 
   /* ---- CTA FORTE ---- */
   #cta-forte {
-    padding: 4rem 1.25rem;
+    padding: 3rem 1.25rem;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .cta-court-svg {
@@ -1413,15 +1417,15 @@ section { padding: 6rem 0; }
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 95%;
-    height: 95%;
-    opacity: 0.12;
+    width: 92%;
+    height: 88%;
+    opacity: 0.22;
   }
 
   .cta-vignette {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.45) 100%);
     z-index: 1;
   }
 
@@ -1444,69 +1448,77 @@ section { padding: 6rem 0; }
   .cta-racket {
     width: 48px;
     height: 24px;
-    top: calc(58% - 6px);
+    top: calc(56% - 6px);
   }
 
   .cta-racket-left {
-    left: calc(10% - 36px);
+    left: calc(8% - 36px);
     animation: racket-left-swing 8s linear infinite;
   }
 
   .cta-racket-right {
-    left: calc(88% - 12px);
+    left: calc(90% - 12px);
     animation: racket-right-swing 8s linear infinite;
   }
 
   .cta-forte-inner {
     position: relative;
     z-index: 3;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
   }
 
   .cta-forte-inner h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    word-break: break-word;
-    overflow-wrap: break-word;
+    font-size: 1.65rem;
+    margin-bottom: 0.85rem;
+    line-height: 1.2;
   }
 
   .cta-forte-inner p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+    font-size: 0.92rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
   }
 
   .cta-forte-btns {
-    flex-direction: column;
-    gap: 0.75rem;
+    flex-direction: row;
+    gap: 0.65rem;
+    justify-content: center;
+    flex-wrap: nowrap;
   }
 
   .cta-forte-btns .btn {
-    width: 100%;
+    width: auto;
+    flex: 1;
     text-align: center;
-    padding: 1rem;
+    padding: 0.75rem 0.75rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
   }
 
   @keyframes ball-rally-mobile {
-    0%   { left: 10%; top: 58%; animation-timing-function: linear; }
-    18%  { left: 35%; top: 52%; animation-timing-function: linear; }
-    36%  { left: 62%; top: 58%; animation-timing-function: linear; }
-    43%  { left: 70%; top: 54%; animation-timing-function: linear; }
-    50%  { left: 88%; top: 58%; animation-timing-function: linear; }
-    68%  { left: 63%; top: 52%; animation-timing-function: linear; }
-    86%  { left: 38%; top: 58%; animation-timing-function: linear; }
-    93%  { left: 28%; top: 54%; animation-timing-function: linear; }
-    100% { left: 10%; top: 58%; }
+    0%   { left: 10%; top: 56%; animation-timing-function: linear; }
+    18%  { left: 35%; top: 50%; animation-timing-function: linear; }
+    36%  { left: 62%; top: 56%; animation-timing-function: linear; }
+    43%  { left: 70%; top: 52%; animation-timing-function: linear; }
+    50%  { left: 88%; top: 56%; animation-timing-function: linear; }
+    68%  { left: 63%; top: 50%; animation-timing-function: linear; }
+    86%  { left: 38%; top: 56%; animation-timing-function: linear; }
+    93%  { left: 28%; top: 52%; animation-timing-function: linear; }
+    100% { left: 10%; top: 56%; }
   }
 
   @keyframes ball-shadow-mobile {
-    0%   { left: 10%; top: 59%; opacity: 0; transform: scale(0); }
-    28%  { left: 52%; top: 59%; opacity: 0.25; transform: scale(0.35); }
-    36%  { left: 62%; top: 59%; opacity: 1; transform: scale(1.1); }
-    37%  { left: 63%; top: 59%; opacity: 0; transform: scale(0); }
-    78%  { left: 48%; top: 59%; opacity: 0.25; transform: scale(0.35); }
-    86%  { left: 38%; top: 59%; opacity: 1; transform: scale(1.1); }
-    87%  { left: 37%; top: 59%; opacity: 0; transform: scale(0); }
-    100% { left: 10%; top: 59%; opacity: 0; transform: scale(0); }
+    0%   { left: 10%; top: 57%; opacity: 0; transform: scale(0); }
+    28%  { left: 52%; top: 57%; opacity: 0.25; transform: scale(0.35); }
+    36%  { left: 62%; top: 57%; opacity: 1; transform: scale(1.1); }
+    37%  { left: 63%; top: 57%; opacity: 0; transform: scale(0); }
+    78%  { left: 48%; top: 57%; opacity: 0.25; transform: scale(0.35); }
+    86%  { left: 38%; top: 57%; opacity: 1; transform: scale(1.1); }
+    87%  { left: 37%; top: 57%; opacity: 0; transform: scale(0); }
+    100% { left: 10%; top: 57%; opacity: 0; transform: scale(0); }
   }
 
   /* ---- EBOOKS ---- */
