@@ -228,17 +228,24 @@
     <!-- QUADRA SVG DE FUNDO -->
     <svg class="cta-court-svg" viewBox="0 0 1000 560" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="1000" height="560" fill="#b85c2a"/>
-      <rect x="60" y="40" width="880" height="480" fill="none" stroke="white" stroke-width="5"/>
-      <line x1="60" y1="110" x2="940" y2="110" stroke="white" stroke-width="3"/>
-      <line x1="60" y1="450" x2="940" y2="450" stroke="white" stroke-width="3"/>
-      <line x1="160" y1="110" x2="160" y2="450" stroke="white" stroke-width="3"/>
-      <line x1="840" y1="110" x2="840" y2="450" stroke="white" stroke-width="3"/>
-      <line x1="160" y1="280" x2="840" y2="280" stroke="white" stroke-width="7"/>
-      <line x1="60" y1="272" x2="60" y2="288" stroke="white" stroke-width="5"/>
-      <line x1="940" y1="272" x2="940" y2="288" stroke="white" stroke-width="5"/>
-      <line x1="160" y1="195" x2="840" y2="195" stroke="white" stroke-width="3"/>
-      <line x1="160" y1="365" x2="840" y2="365" stroke="white" stroke-width="3"/>
-      <line x1="500" y1="195" x2="500" y2="365" stroke="white" stroke-width="3"/>
+      <!-- Court: 800×380px = 2.105:1, centered at y=280, alleys 18% each side -->
+      <rect x="100" y="90" width="800" height="380" fill="none" stroke="white" stroke-width="5"/>
+      <!-- Singles sidelines: 18% of height = 68px from each edge -->
+      <line x1="100" y1="158" x2="900" y2="158" stroke="white" stroke-width="3"/>
+      <line x1="100" y1="402" x2="900" y2="402" stroke="white" stroke-width="3"/>
+      <!-- Net: vertical at center (x=500), full court height -->
+      <line x1="500" y1="90" x2="500" y2="470" stroke="white" stroke-width="7"/>
+      <!-- Net post marks -->
+      <line x1="492" y1="90" x2="508" y2="90" stroke="white" stroke-width="5"/>
+      <line x1="492" y1="470" x2="508" y2="470" stroke="white" stroke-width="5"/>
+      <!-- Service lines: 53.8% of half-court (400px) = 215px from net -->
+      <line x1="285" y1="158" x2="285" y2="402" stroke="white" stroke-width="3"/>
+      <line x1="715" y1="158" x2="715" y2="402" stroke="white" stroke-width="3"/>
+      <!-- Center service line: at singles width midpoint (y=280) -->
+      <line x1="285" y1="280" x2="715" y2="280" stroke="white" stroke-width="3"/>
+      <!-- Baseline center marks -->
+      <line x1="100" y1="274" x2="100" y2="286" stroke="white" stroke-width="5"/>
+      <line x1="900" y1="274" x2="900" y2="286" stroke="white" stroke-width="5"/>
     </svg>
 
     <!-- VINHETA -->
