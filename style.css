@@ -585,7 +585,13 @@ section { padding: 6rem 0; }
    ============================================= */
 #cta-forte {
   position: relative;
-  padding: 7rem 0;
+  padding: 0;
+  height: 60vw;
+  max-height: 728px;
+  min-height: 494px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   overflow: hidden;
   background: #b85c2a;
@@ -1406,8 +1412,8 @@ section { padding: 6rem 0; }
   /* ---- CTA FORTE ---- */
   #cta-forte {
     padding: 0;
-    min-height: 360px;
-    height: 360px;
+    min-height: 468px;
+    height: 468px;
     display: flex;
     align-items: center;
     justify-content: center;
