@@ -6,24 +6,24 @@ var IMAGENS = {
   hero: [
     'img/hero-01.jpg',
     'img/hero-02.jpg',
-    'img/hero-03.jpg',
-    'img/hero-04.jpg',
-    'img/hero-05.jpg'
+    'img/hero-03.jpg'
   ],
   servicos: [
     'img/servico-01.png',
     'img/servico-02.png'
   ],
   tq10: [
-    { src: 'img/1tq10.jpg', duration: 6000 },
-    { src: 'img/2tq10.png', duration: 3000 }
+    { src: 'img/1tq10.jpg',   duration: 6000 },
+    { src: 'img/2tq10.png',   duration: 3000 },
+    { src: 'img/3tq10.jpeg',  duration: 4000 },
+    { src: 'img/4tq10.png',   duration: 4000 }
   ],
   ebooks: 'img/depois-01.jpeg',
   treinamentos: [
     'img/detalhe-01.jpeg',
     'img/detalhe-02.jpeg'
   ],
-  sobre: 'img/hero-04.png'
+  sobre: 'img/galeria-01.jpeg'
 };
 
 (function () {
@@ -39,13 +39,6 @@ var IMAGENS = {
     heroSlider.appendChild(div);
   });
 
-  var servicesGallery = document.getElementById('services-gallery');
-  IMAGENS.servicos.forEach(function (src) {
-    var img = document.createElement('img');
-    img.src = src;
-    img.loading = 'lazy';
-    servicesGallery.appendChild(img);
-  });
 
   var tq10Carousel = document.getElementById('tq10-carousel');
   IMAGENS.tq10.forEach(function (item, i) {
@@ -197,5 +190,22 @@ var IMAGENS = {
       }
     });
   });
+
+  /* ---- TQ-10 COMPARE — SCROLL TRIGGER ---- */
+  var tq10Compare = document.getElementById('tq10-compare');
+  if (tq10Compare) {
+    var compareObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var manual  = tq10Compare.querySelector('.tq10-compare-manual');
+          var tq10    = tq10Compare.querySelector('.tq10-compare-tq10');
+          if (manual) manual.classList.add('animate-in-left');
+          if (tq10)   tq10.classList.add('animate-in-right');
+          compareObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    compareObserver.observe(tq10Compare);
+  }
 
 })();
