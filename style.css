@@ -1431,16 +1431,16 @@ section { padding: 6rem 0; }
 
   .cta-ball {
     display: block;
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     animation:
-      ball-rally-mobile 5s linear infinite,
+      ball-rally 8s linear infinite,
       ball-spin 0.4s linear infinite;
   }
 
   .cta-ball-shadow {
     display: block;
-    animation: ball-shadow-mobile 5s linear infinite;
+    animation: ball-shadow-rally 8s linear infinite;
   }
 
   .cta-bounce-mark { display: none; }
@@ -1448,16 +1448,16 @@ section { padding: 6rem 0; }
   .cta-racket {
     width: 48px;
     height: 24px;
-    top: calc(56% - 6px);
+    top: calc(60% - 6px);
   }
 
   .cta-racket-left {
-    left: calc(8% - 36px);
+    left: calc(16% - 47px);
     animation: racket-left-swing 8s linear infinite;
   }
 
   .cta-racket-right {
-    left: calc(90% - 12px);
+    left: calc(84% - 17px);
     animation: racket-right-swing 8s linear infinite;
   }
 
@@ -1497,29 +1497,6 @@ section { padding: 6rem 0; }
     padding: 0.75rem 0.75rem;
     font-size: 0.85rem;
     white-space: nowrap;
-  }
-
-  @keyframes ball-rally-mobile {
-    0%   { left: 10%; top: 56%; animation-timing-function: linear; }
-    18%  { left: 35%; top: 50%; animation-timing-function: linear; }
-    36%  { left: 62%; top: 56%; animation-timing-function: linear; }
-    43%  { left: 70%; top: 52%; animation-timing-function: linear; }
-    50%  { left: 88%; top: 56%; animation-timing-function: linear; }
-    68%  { left: 63%; top: 50%; animation-timing-function: linear; }
-    86%  { left: 38%; top: 56%; animation-timing-function: linear; }
-    93%  { left: 28%; top: 52%; animation-timing-function: linear; }
-    100% { left: 10%; top: 56%; }
-  }
-
-  @keyframes ball-shadow-mobile {
-    0%   { left: 10%; top: 57%; opacity: 0; transform: scale(0); }
-    28%  { left: 52%; top: 57%; opacity: 0.25; transform: scale(0.35); }
-    36%  { left: 62%; top: 57%; opacity: 1; transform: scale(1.1); }
-    37%  { left: 63%; top: 57%; opacity: 0; transform: scale(0); }
-    78%  { left: 48%; top: 57%; opacity: 0.25; transform: scale(0.35); }
-    86%  { left: 38%; top: 57%; opacity: 1; transform: scale(1.1); }
-    87%  { left: 37%; top: 57%; opacity: 0; transform: scale(0); }
-    100% { left: 10%; top: 57%; opacity: 0; transform: scale(0); }
   }
 
   /* ---- EBOOKS ---- */
