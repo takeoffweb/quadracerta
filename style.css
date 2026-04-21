@@ -1499,6 +1499,40 @@ section { padding: 6rem 0; }
 
   .footer-brand img { height: 36px; }
 
+  /* ---- CTA FORTE MOBILE ---- */
+  .cta-court-svg {
+    width: 90%;
+    max-width: 340px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translate(-50%, -50%);
+    opacity: 0.12;
+  }
+
+  .cta-ball {
+    display: block;
+    width: 16px;
+    height: 16px;
+    animation: ball-rally-mobile 8s ease-in-out infinite;
+  }
+
+  .cta-ball-shadow { display: none; }
+
+  .cta-bounce-mark { display: none; }
+
+  .cta-racket { display: none; }
+
+  @keyframes ball-rally-mobile {
+    0%   { left: 12%; top: 48%; }
+    48%  { left: 82%; top: 52%; }
+    50%  { left: 82%; top: 52%; transform: scale(1.2); }
+    98%  { left: 12%; top: 48%; }
+    100% { left: 12%; top: 48%; transform: scale(1.2); }
+  }
+
 }
 
 /* --- MOBILE PEQUENO (≤ 480px) --- */
