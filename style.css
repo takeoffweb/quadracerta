@@ -1419,7 +1419,7 @@ section { padding: 6rem 0; }
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.20;
+    opacity: 0.40;
     transform: none;
   }
 
@@ -1506,14 +1506,14 @@ section { padding: 6rem 0; }
   .cta-bounce-mark { display: none; }
 
   @keyframes ball-rally-mobile {
-    0%   { left: 12%; top: 52%; animation-timing-function: ease-in; }
+    0%   { left: 12%; top: 52%; animation-timing-function: linear; }
     18%  { left: 38%; top: 46%; animation-timing-function: linear; }
-    36%  { left: 65%; top: 52%; animation-timing-function: ease-out; }
-    43%  { left: 73%; top: 48%; animation-timing-function: ease-in; }
-    50%  { left: 88%; top: 52%; animation-timing-function: ease-in; }
+    36%  { left: 65%; top: 52%; animation-timing-function: linear; }
+    43%  { left: 73%; top: 48%; animation-timing-function: linear; }
+    50%  { left: 88%; top: 52%; animation-timing-function: linear; }
     68%  { left: 62%; top: 46%; animation-timing-function: linear; }
-    86%  { left: 35%; top: 52%; animation-timing-function: ease-out; }
-    93%  { left: 25%; top: 48%; animation-timing-function: ease-in; }
+    86%  { left: 35%; top: 52%; animation-timing-function: linear; }
+    93%  { left: 25%; top: 48%; animation-timing-function: linear; }
     100% { left: 12%; top: 52%; }
   }
 
