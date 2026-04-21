@@ -1411,24 +1411,56 @@ section { padding: 6rem 0; }
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
 
   .cta-court-svg {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    opacity: 0.40;
-    transform: none;
+    opacity: 0.22;
   }
 
   .cta-vignette {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.45) 100%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.5) 100%);
     z-index: 1;
   }
+
+  .cta-ball {
+    display: block;
+    width: 12px;
+    height: 12px;
+    animation: ball-rally 8s linear infinite,
+               ball-spin 0.4s linear infinite;
+  }
+
+  .cta-ball-shadow {
+    display: block;
+    animation: ball-shadow-rally 8s linear infinite;
+  }
+
+  .cta-racket {
+    width: 44px;
+    height: 22px;
+    top: calc(60% - 5px);
+  }
+
+  .cta-racket-left {
+    left: calc(16% - 33px);
+    animation: racket-left-swing 8s linear infinite;
+  }
+
+  .cta-racket-right {
+    left: calc(84% - 11px);
+    animation: racket-right-swing 8s linear infinite;
+  }
+
+  .cta-bounce-mark { display: none; }
 
   .cta-forte-inner {
     position: relative;
@@ -1472,60 +1504,6 @@ section { padding: 6rem 0; }
     padding: 0.7rem 0.5rem;
     font-size: 0.82rem;
     white-space: nowrap;
-  }
-
-  .cta-ball {
-    display: block;
-    width: 12px;
-    height: 12px;
-    animation: ball-rally-mobile 8s linear infinite,
-               ball-spin 0.4s linear infinite;
-  }
-
-  .cta-ball-shadow {
-    display: block;
-    animation: ball-shadow-mobile 8s linear infinite;
-  }
-
-  .cta-racket {
-    width: 44px;
-    height: 22px;
-    top: 52%;
-  }
-
-  .cta-racket-left {
-    left: calc(8% - 33px);
-    animation: racket-left-swing 8s linear infinite;
-  }
-
-  .cta-racket-right {
-    left: calc(92% - 11px);
-    animation: racket-right-swing 8s linear infinite;
-  }
-
-  .cta-bounce-mark { display: none; }
-
-  @keyframes ball-rally-mobile {
-    0%   { left: 12%; top: 52%; animation-timing-function: linear; }
-    18%  { left: 38%; top: 46%; animation-timing-function: linear; }
-    36%  { left: 65%; top: 52%; animation-timing-function: linear; }
-    43%  { left: 73%; top: 48%; animation-timing-function: linear; }
-    50%  { left: 88%; top: 52%; animation-timing-function: linear; }
-    68%  { left: 62%; top: 46%; animation-timing-function: linear; }
-    86%  { left: 35%; top: 52%; animation-timing-function: linear; }
-    93%  { left: 25%; top: 48%; animation-timing-function: linear; }
-    100% { left: 12%; top: 52%; }
-  }
-
-  @keyframes ball-shadow-mobile {
-    0%   { left: 12%; top: 53.5%; opacity: 0; transform: scale(0); }
-    28%  { left: 55%; top: 53.5%; opacity: 0.2; transform: scale(0.3); }
-    36%  { left: 65%; top: 53.5%; opacity: 0.9; transform: scale(1); }
-    37%  { left: 66%; top: 53.5%; opacity: 0; transform: scale(0); }
-    78%  { left: 45%; top: 53.5%; opacity: 0.2; transform: scale(0.3); }
-    86%  { left: 35%; top: 53.5%; opacity: 0.9; transform: scale(1); }
-    87%  { left: 34%; top: 53.5%; opacity: 0; transform: scale(0); }
-    100% { left: 12%; top: 53.5%; opacity: 0; transform: scale(0); }
   }
 
   /* ---- EBOOKS ---- */
