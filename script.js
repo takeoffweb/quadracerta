@@ -23,7 +23,14 @@ var IMAGENS = {
     'img/detalhe-01.jpeg',
     'img/detalhe-02.jpeg'
   ],
-  sobre: 'img/galeria-01.jpeg'
+  sobre: 'img/galeria-01.jpeg',
+  mentoria: [
+    'img/mentoria-01.jpg',
+    'img/mentoria-02.jpg',
+    'img/mentoria-video.mp4',
+    'img/mentoria-03.jpg',
+    'img/mentoria-04.jpg'
+  ]
 };
 
 (function () {
@@ -51,12 +58,6 @@ var IMAGENS = {
     div.appendChild(img);
     tq10Carousel.appendChild(div);
   });
-
-  var ebooksVisual = document.getElementById('ebooks-visual');
-  var ebooksImg = document.createElement('img');
-  ebooksImg.src = IMAGENS.ebooks;
-  ebooksImg.loading = 'lazy';
-  ebooksVisual.appendChild(ebooksImg);
 
   IMAGENS.treinamentos.forEach(function (src, i) {
     var img = document.getElementById('treinamento-img-' + i);
@@ -206,6 +207,107 @@ var IMAGENS = {
       });
     }, { threshold: 0.2 });
     compareObserver.observe(tq10Compare);
+  }
+
+  /* ---- MENTORIA SLIDER ---- */
+  var mentoriaSlides = document.querySelectorAll('.mentoria-slide');
+  if (mentoriaSlides.length > 1) {
+    var mentoriaIndex = 0;
+    setInterval(function() {
+      mentoriaSlides[mentoriaIndex].classList.remove('active');
+      mentoriaIndex = (mentoriaIndex + 1) % mentoriaSlides.length;
+      var currentSlide = mentoriaSlides[mentoriaIndex];
+      currentSlide.classList.add('active');
+      var video = currentSlide.querySelector('video');
+      if (video) {
+        video.currentTime = 0;
+        video.play();
+      }
+    }, 4000);
+  }
+
+  /* ---- EBOOK DISPLAY SLIDER COM GSAP ---- */
+  var ebookImg      = document.getElementById('ebook-display-img');
+  var ebookCards    = document.querySelectorAll('.ebook-card');
+  var ebookSrcs     = [
+    'img/ebook-pt.png',
+    'img/ebook-esp.png',
+    'img/ebook-en.png',
+    'img/ebook-rede.png'
+  ];
+  var ebookCurrent  = 0;
+  var ebookPaused   = false;
+  var ebookTimer    = null;
+
+  function ebookSwitch(src, direction) {
+    if (!ebookImg) return;
+    direction = direction || 1;
+    gsap.to(ebookImg, {
+      duration: 0.35,
+      opacity: 0,
+      x: direction * -40,
+      ease: 'power2.in',
+      onComplete: function() {
+        ebookImg.src = src;
+        gsap.fromTo(ebookImg,
+          { opacity: 0, x: direction * 40 },
+          { duration: 0.45, opacity: 1, x: 0, ease: 'power2.out' }
+        );
+      }
+    });
+  }
+
+  function ebookSetActive(index) {
+    ebookCards.forEach(function(c) { c.classList.remove('active'); });
+    if (ebookCards[index]) ebookCards[index].classList.add('active');
+  }
+
+  function ebookNext() {
+    var next = (ebookCurrent + 1) % ebookSrcs.length;
+    ebookSwitch(ebookSrcs[next], 1);
+    ebookSetActive(next);
+    ebookCurrent = next;
+  }
+
+  function ebookStartTimer() {
+    ebookTimer = setInterval(function() {
+      if (!ebookPaused) ebookNext();
+    }, 3000);
+  }
+
+  ebookSetActive(0);
+  ebookStartTimer();
+
+  ebookCards.forEach(function(card, i) {
+    card.addEventListener('mouseenter', function() {
+      ebookPaused = true;
+      if (i !== ebookCurrent) {
+        var dir = i > ebookCurrent ? 1 : -1;
+        ebookSwitch(ebookSrcs[i], dir);
+        ebookSetActive(i);
+        ebookCurrent = i;
+      }
+    });
+    card.addEventListener('mouseleave', function() {
+      ebookPaused = false;
+    });
+  });
+
+  /* ---- MENTORIA — SCROLL TRIGGER ---- */
+  var mentoriaHeader = document.querySelector('.mentoria-header');
+  var mentoriaItems  = document.querySelectorAll('.mentoria-list li');
+  if (mentoriaHeader) {
+    var mentoriaObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          mentoriaHeader.classList.add('visible');
+          var mentoriaCards = document.querySelectorAll('.mentoria-card');
+          mentoriaCards.forEach(function(card) { card.classList.add('visible'); });
+          mentoriaObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    mentoriaObserver.observe(mentoriaHeader);
   }
 
 })();
