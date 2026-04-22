@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="img/logo.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
 
@@ -402,118 +403,147 @@
        TREINAMENTOS
        ============================================= -->
   <section id="treinamentos">
-    <div class="container">
-      <h2 class="section-title">Evolua com quem vive a quadra.</h2>
-      <p class="section-subtitle">Capacitação prática e teórica com certificação para profissionais de manutenção.</p>
+  <div class="container">
 
-      <div class="training-grid">
-
-        <div class="training-card">
-          <div class="training-placeholder">
-            <img id="treinamento-img-0" src="" alt="Treinamento presencial Quadra Certa" loading="lazy" class="training-img-real">
-            <div class="training-ph-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="44" height="44">
-                <rect x="5" y="10" width="38" height="28" rx="2" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
-                <line x1="24" y1="10" x2="24" y2="38" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
-                <line x1="5" y1="24" x2="43" y2="24" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
-                <line x1="5" y1="16" x2="43" y2="16" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-                <line x1="5" y1="32" x2="43" y2="32" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-              </svg>
-            </div>
-          </div>
-          <div class="training-info">
-            <span class="training-badge">Presencial · 12h</span>
-            <h3>Treinamento Profissional</h3>
-            <p>Capacitação teórica e prática com certificado de conclusão. Conteúdo técnico desenvolvido por especialistas em saibro.</p>
-            <a href="https://wa.me/5554994945556" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              Agendar pelo WhatsApp
-            </a>
-          </div>
-        </div>
-
-        <div class="training-card">
-          <div class="training-placeholder">
-            <img id="treinamento-img-1" src="" alt="Mentoria personalizada Quadra Certa" loading="lazy" class="training-img-real">
-            <div class="training-ph-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="44" height="44">
-                <circle cx="24" cy="16" r="8" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
-                <path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="rgba(255,255,255,0.22)" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </div>
-          <div class="training-info">
-            <span class="training-badge">Online ou Presencial</span>
-            <h3>Mentoria Personalizada</h3>
-            <p>Acompanhamento individualizado para a sua realidade. Diagnóstico completo e soluções sob medida para cada quadra.</p>
-            <a href="https://wa.me/5554994945556" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              Agendar pelo WhatsApp
-            </a>
-          </div>
-        </div>
-
-      </div>
+    <div class="mentoria-header">
+      <h2 class="mentoria-main-title">Mentoria profissional para quadras de saibro</h2>
+      <p class="mentoria-subtitle">Aplicação real para manter sua quadra sempre em alto nível.</p>
     </div>
-  </section>
+
+    <div class="mentoria-inner">
+
+      <div class="mentoria-image">
+        <span class="mentoria-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><circle cx="12" cy="8" r="6"/><path d="M9 21l3-3 3 3M12 18v-5"/></svg>
+          Certificado incluso
+        </span>
+        <div class="mentoria-slider">
+          <div class="mentoria-slide active">
+            <img src="img/mentoria-01.jpeg" alt="Mentoria Quadra Certa" loading="lazy">
+          </div>
+          <div class="mentoria-slide">
+            <img src="img/mentoria-02.jpeg" alt="Mentoria Quadra Certa" loading="lazy">
+          </div>
+          <div class="mentoria-slide">
+            <video src="img/mentoria-video.mp4" autoplay muted loop playsinline></video>
+          </div>
+          <div class="mentoria-slide">
+            <img src="img/mentoria-03.jpeg" alt="Mentoria Quadra Certa" loading="lazy">
+          </div>
+          <div class="mentoria-slide">
+            <img src="img/mentoria-04.jpeg" alt="Mentoria Quadra Certa" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="mentoria-content">
+        <div class="mentoria-cards">
+
+          <div class="mentoria-card">
+            <div class="mentoria-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="mentoria-card-text">
+              <strong>Cuidados diários</strong>
+              <span>Rotina que preserva a qualidade do saibro</span>
+            </div>
+          </div>
+
+          <div class="mentoria-card">
+            <div class="mentoria-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="mentoria-card-text">
+              <strong>Boas práticas de manutenção</strong>
+              <span>Técnicas para manter o pó solto e uniforme</span>
+            </div>
+          </div>
+
+          <div class="mentoria-card">
+            <div class="mentoria-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <div class="mentoria-card-text">
+              <strong>Prevenção de buracos e desgaste</strong>
+              <span>Identificar e corrigir antes que se agravem</span>
+            </div>
+          </div>
+
+          <div class="mentoria-card">
+            <div class="mentoria-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+            </div>
+            <div class="mentoria-card-text">
+              <strong>Ajustes conforme clima e estação</strong>
+              <span>Adaptações práticas para cada condição</span>
+            </div>
+          </div>
+
+          <div class="mentoria-card">
+            <div class="mentoria-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </div>
+            <div class="mentoria-card-text">
+              <strong>Quadras internas e externas</strong>
+              <span>Cuidados específicos para cada tipo</span>
+            </div>
+          </div>
+
+        </div>
+
+        <a href="https://wa.me/5554994945556" target="_blank" rel="noopener noreferrer" class="btn btn-primary mentoria-cta">
+          Agendar minha mentoria →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- =============================================
        EBOOKS / PRODUTOS DIGITAIS
        ============================================= -->
   <section id="ebooks">
     <div class="container">
-      <h2 class="section-title">Aprenda com a referência do Brasil.</h2>
-      <p class="section-subtitle">Guias profissionais para quem cuida de quadras de saibro.</p>
+      <h2 class="section-title">Conhecimento sem fronteiras.</h2>
+      <p class="section-subtitle">Guias profissionais de manutenção de quadras de saibro em 3 idiomas — para quem leva a quadra a sério em qualquer lugar do mundo.</p>
 
       <div class="ebooks-layout">
 
         <div class="ebooks-visual" id="ebooks-visual">
-          <div class="ebook-stack" aria-hidden="true">
-            <div class="ebook-cover" style="background:#0d2247; transform:rotate(-6deg) translate(-6px,10px);"></div>
-            <div class="ebook-cover" style="background:#1E3A6E; transform:rotate(-3deg) translate(-3px,5px);"></div>
-            <div class="ebook-cover" style="background:#E8701A; transform:rotate(1deg) translate(2px,-2px);"></div>
-            <div class="ebook-cover" style="background:#C4622D; transform:rotate(4deg) translate(6px,-6px);"></div>
+          <div class="ebook-display-wrapper">
+            <img class="ebook-display-img" id="ebook-display-img" src="img/ebook-pt.png" alt="Ebook em destaque">
           </div>
         </div>
 
         <div class="ebooks-grid">
 
-          <div class="ebook-card">
-            <svg class="ebook-icon" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          <div class="ebook-card" data-ebook="img/ebook-pt.png">
+            <svg class="ebook-icon" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
             <span class="ebook-lang">🇧🇷 Português</span>
             <h3>Como cuidar da sua quadra de saibro</h3>
-            <a href="https://hotmart.com/pt-br/marketplace/produtos/como-cuidar-da-sua-quadra-de-saibro-guia-pratico-de-manutencao-profissional/N103295677P"
-               target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              Comprar
-            </a>
+            <a href="https://hotmart.com/pt-br/marketplace/produtos/como-cuidar-da-sua-quadra-de-saibro-guia-pratico-de-manutencao-profissional/N103295677P" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Comprar</a>
           </div>
 
-          <div class="ebook-card">
-            <svg class="ebook-icon" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          <div class="ebook-card" data-ebook="img/ebook-esp.png">
+            <svg class="ebook-icon" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
             <span class="ebook-lang">🇪🇸 Español</span>
             <h3>Cómo cuidar su cancha de polvo de ladrillo</h3>
-            <a href="https://hotmart.com/es/marketplace/produtos/como-cuidar-su-cancha-de-polvo-de-ladrillo-guia-practica-de-mantenimiento-profesional/I103902357T"
-               target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              Comprar
-            </a>
+            <a href="https://hotmart.com/es/marketplace/produtos/como-cuidar-su-cancha-de-polvo-de-ladrillo-guia-practica-de-mantenimiento-profesional/I103902357T" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Comprar</a>
           </div>
 
-          <div class="ebook-card">
-            <svg class="ebook-icon" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          <div class="ebook-card" data-ebook="img/ebook-en.png">
+            <svg class="ebook-icon" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
             <span class="ebook-lang">🇺🇸 English</span>
             <h3>How to take Care of Your Clay Tennis Court</h3>
-            <a href="https://hotmart.com/en/marketplace/products/how-to-take-care-of-your-clay-tennis-court/R103515601R"
-               target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              Comprar
-            </a>
+            <a href="https://hotmart.com/en/marketplace/products/how-to-take-care-of-your-clay-tennis-court/R103515601R" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Comprar</a>
           </div>
 
-          <div class="ebook-card">
-            <svg class="ebook-icon" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          <div class="ebook-card" data-ebook="img/ebook-rede.png">
+            <svg class="ebook-icon" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
             <span class="ebook-lang">🇧🇷 Português</span>
             <h3>Faça você mesmo sua rede niveladora para sua quadra</h3>
-            <a href="https://hotmart.com/pt-br/marketplace/produtos/faca-voce-mesmo-sua-rede-niveladora-para-sua-quadra/A103332743B"
-               target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              Comprar
-            </a>
+            <a href="https://hotmart.com/pt-br/marketplace/produtos/faca-voce-mesmo-sua-rede-niveladora-para-sua-quadra/A103332743B" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Comprar</a>
           </div>
 
         </div>
