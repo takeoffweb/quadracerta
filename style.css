@@ -1556,36 +1556,37 @@ section { padding: 6rem 0; }
 
   .cta-forte-inner {
     position: absolute;
-    top: 62%;
-    left: 50%;
-    transform: translate(-50%, -40%);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 3;
     padding: 0 1.25rem;
     width: 100%;
   }
 
   .cta-forte-inner h2 {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 1.35rem;
-    margin-bottom: 0;
     line-height: 1.2;
     text-align: center;
+    white-space: nowrap;
+    margin-bottom: 0;
   }
 
-  .cta-forte-inner p {
-    display: none;
+  .cta-forte-btns {
+    position: absolute;
+    bottom: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    width: auto;
   }
 
   #cta-forte .btn-outline { display: none; }
-
-  .cta-forte-btns {
-    justify-content: center;
-    width: 100%;
-  }
 
   #cta-forte .btn-whatsapp {
     width: fit-content;
