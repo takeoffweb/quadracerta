@@ -1402,7 +1402,7 @@ section { padding: 6rem 0; }
 
   /* ---- HERO ---- */
   .hero {
-    min-height: 85vh;
+    min-height: 100vh;
     align-items: flex-end;
   }
 
@@ -1456,9 +1456,9 @@ section { padding: 6rem 0; }
 
   .tq10-carousel {
     display: block;
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 3;
     border-radius: 12px;
     overflow: hidden;
   }
@@ -1481,11 +1481,16 @@ section { padding: 6rem 0; }
   .tq10-compare {
     flex-direction: row;
     gap: 0.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
   .tq10-compare-card {
     padding: 1rem 0.75rem;
     gap: 0.75rem;
+    flex: 0 0 72vw;
+    scroll-snap-align: start;
   }
 
   .tq10-compare-header h4 {
@@ -1506,6 +1511,7 @@ section { padding: 6rem 0; }
   .tq10-divider {
     flex-direction: column;
     padding: 0 0.4rem;
+    flex: 0 0 auto;
   }
 
   .tq10-divider-line {
