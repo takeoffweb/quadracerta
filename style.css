@@ -1450,7 +1450,7 @@ section { padding: 6rem 0; }
   }
 
   .tq10-body {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.75rem;
   }
 
