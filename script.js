@@ -18,7 +18,6 @@ var IMAGENS = {
     { src: 'img/3tq10.jpeg',  duration: 4000 },
     { src: 'img/4tq10.png',   duration: 4000 }
   ],
-  ebooks: 'img/depois-01.jpeg',
   treinamentos: [
     'img/detalhe-01.jpeg',
     'img/detalhe-02.jpeg'
@@ -135,6 +134,15 @@ var IMAGENS = {
   /* ---- FILTRO DE PRODUTOS ---- */
   var filterBtns   = document.querySelectorAll('.filter-btn');
   var productCards = document.querySelectorAll('.product-card');
+  var productsGrid = document.getElementById('products-grid');
+
+  function updateGridClass(filter) {
+    var count = Array.from(productCards).filter(function(c) {
+      return c.dataset.category === filter;
+    }).length;
+    productsGrid.classList.toggle('products-grid--single', count === 1);
+    productsGrid.classList.toggle('products-grid--duo', filter === 'ebooks');
+  }
 
   filterBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -144,7 +152,7 @@ var IMAGENS = {
       var filter = btn.dataset.filter;
 
       productCards.forEach(function (card) {
-        var match = filter === 'all' || card.dataset.category === filter;
+        var match = card.dataset.category === filter;
         if (match) {
           card.style.display = '';
           requestAnimationFrame(function () {
@@ -161,8 +169,19 @@ var IMAGENS = {
           }, 260);
         }
       });
+
+      updateGridClass(filter);
     });
   });
+
+  // Inicializa com filtro padrão: acessorios
+  productCards.forEach(function(card) {
+    if (card.dataset.category !== 'acessorios') {
+      card.classList.add('product-hidden');
+      card.style.display = 'none';
+    }
+  });
+  updateGridClass('acessorios');
 
   /* ---- TQ-10 CARROSSEL ---- */
   var tq10Slides = document.querySelectorAll('.tq10-slide');
