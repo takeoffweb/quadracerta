@@ -1577,9 +1577,11 @@ section { padding: 6rem 0; }
     margin-bottom: 0;
   }
 
+  .cta-forte-inner p { display: none; }
+
   .cta-forte-btns {
     position: absolute;
-    bottom: 18%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     justify-content: center;
