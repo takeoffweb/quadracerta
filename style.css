@@ -1715,11 +1715,8 @@ section { padding: 6rem 0; }
 
   .ebook-card { padding: 1.1rem; }
 
-  .cta-forte-btns {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .cta-forte-btns .btn { flex: unset; width: 100%; }
+  .cta-forte-btns { justify-content: center; }
+  #cta-forte .btn-whatsapp { width: fit-content; padding: 0.7rem 1.75rem; }
 }
 
 /* =============================================
