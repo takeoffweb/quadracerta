@@ -1555,21 +1555,21 @@ section { padding: 6rem 0; }
   .cta-bounce-mark { display: none; }
 
   .cta-forte-inner {
-    position: relative;
-    z-index: 3;
-    padding: 0 1.25rem;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 1rem;
+    z-index: 3;
+    padding: 0 1.25rem;
+    width: 100%;
   }
 
   .cta-forte-inner h2 {
-    font-size: 1.55rem;
-    margin-bottom: 0.65rem;
+    font-size: 1.35rem;
+    margin-bottom: 0;
     line-height: 1.2;
     text-align: center;
   }
@@ -1581,22 +1581,15 @@ section { padding: 6rem 0; }
   #cta-forte .btn-outline { display: none; }
 
   .cta-forte-btns {
-    flex-direction: row;
-    gap: 0.6rem;
     justify-content: center;
     width: 100%;
   }
 
-  .cta-forte-btns .btn-whatsapp {
-    width: auto;
-    padding: 0.75rem 2rem;
-  }
-
-  .cta-forte-btns .btn {
-    text-align: center;
-    justify-content: center;
-    font-size: 0.82rem;
-    white-space: nowrap;
+  #cta-forte .btn-whatsapp {
+    width: fit-content;
+    padding: 0.7rem 1.75rem;
+    font-size: 0.9rem;
+    flex: unset;
   }
 
   /* ---- EBOOKS ---- */
