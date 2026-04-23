@@ -214,7 +214,7 @@
         </div>
 
         <div class="about-image">
-          <img id="sobre-img" src="../assets/galeria-01.jpeg" alt="Quadra Certa em ação" loading="lazy">
+          <img id="sobre-img" src="img/galeria-01.jpeg" alt="Quadra Certa em ação" loading="lazy">
         </div>
 
       </div>
@@ -227,7 +227,7 @@
   <section id="cta-forte">
 
     <!-- QUADRA SVG DE FUNDO -->
-    <svg class="cta-court-svg" viewBox="0 0 1000 560" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="cta-court-svg" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <rect width="1000" height="560" fill="#b85c2a"/>
       <!-- Court: 800×380px = 2.105:1, centered at y=280, alleys 18% each side -->
       <rect x="100" y="90" width="800" height="380" fill="none" stroke="white" stroke-width="5"/>
@@ -560,21 +560,33 @@
       <p class="section-subtitle">Equipamentos, guias e acessórios para quem leva a quadra a sério.</p>
 
       <div class="products-filters" role="group" aria-label="Filtrar produtos">
-        <button class="filter-btn active" data-filter="all">Todos</button>
-        <button class="filter-btn" data-filter="equipamento">Equipamento</button>
+        <button class="filter-btn active" data-filter="acessorios">Acessórios</button>
+        <button class="filter-btn" data-filter="equipamento">Equipamentos</button>
         <button class="filter-btn" data-filter="ebooks">Ebooks</button>
-        <button class="filter-btn" data-filter="acessorios">Acessórios</button>
       </div>
 
       <div class="products-grid" id="products-grid">
 
+        <!-- ACESSÓRIO -->
+        <div class="product-card" data-category="acessorios">
+          <div class="product-image">
+            <img src="img/suporte.png" alt="Suporte de Rede para Celular" loading="lazy">
+          </div>
+          <div class="product-info">
+            <span class="product-badge">Acessório</span>
+            <h3>Suporte de Rede para Celular</h3>
+            <p>Suporte prático para fixar o celular na rede durante os treinos.</p>
+            <a href="https://wa.me/5554999494556" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Comprar</a>
+          </div>
+        </div>
+
         <!-- EQUIPAMENTO -->
         <div class="product-card" data-category="equipamento">
           <div class="product-image">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <img src="img/1tq10.jpg" alt="TQ-10" loading="lazy">
           </div>
           <div class="product-info">
-            <span class="product-badge">Equipamento</span>
+            <span class="product-badge">Equipamentos</span>
             <h3>TQ-10</h3>
             <p>Máquina profissional para raspagem e nivelamento de quadras de saibro.</p>
             <a href="https://wa.me/5554999494556" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Solicitar orçamento</a>
@@ -584,7 +596,7 @@
         <!-- EBOOK PT -->
         <div class="product-card" data-category="ebooks">
           <div class="product-image">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            <img src="img/ebook-pt-p.png" alt="Ebook Português" loading="lazy" class="product-img-book">
           </div>
           <div class="product-info">
             <span class="product-badge">Ebook · 🇧🇷</span>
@@ -597,7 +609,7 @@
         <!-- EBOOK EN -->
         <div class="product-card" data-category="ebooks">
           <div class="product-image">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            <img src="img/ebook-en-p.png" alt="Ebook English" loading="lazy" class="product-img-book">
           </div>
           <div class="product-info">
             <span class="product-badge">Ebook · 🇺🇸</span>
@@ -610,7 +622,7 @@
         <!-- EBOOK ES -->
         <div class="product-card" data-category="ebooks">
           <div class="product-image">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            <img src="img/ebook-esp-p.png" alt="Ebook Español" loading="lazy" class="product-img-book">
           </div>
           <div class="product-info">
             <span class="product-badge">Ebook · 🇪🇸</span>
@@ -623,26 +635,13 @@
         <!-- EBOOK REDE -->
         <div class="product-card" data-category="ebooks">
           <div class="product-image">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            <img src="img/ebook-rede-p.png" alt="Ebook Rede Niveladora" loading="lazy" class="product-img-book">
           </div>
           <div class="product-info">
             <span class="product-badge">Ebook · 🇧🇷</span>
             <h3>Faça Você Mesmo sua Rede Niveladora</h3>
             <p>Aprenda a montar sua própria rede niveladora para manutenção da quadra.</p>
             <a href="https://hotmart.com/pt-br/marketplace/produtos/faca-voce-mesmo-sua-rede-niveladora-para-sua-quadra/A103332743B" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Comprar</a>
-          </div>
-        </div>
-
-        <!-- ACESSÓRIO -->
-        <div class="product-card" data-category="acessorios">
-          <div class="product-image">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-          </div>
-          <div class="product-info">
-            <span class="product-badge">Acessório</span>
-            <h3>Suporte de Rede para Celular</h3>
-            <p>Suporte prático para fixar o celular na rede durante os treinos.</p>
-            <a href="https://wa.me/5554999494556" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Comprar</a>
           </div>
         </div>
 
