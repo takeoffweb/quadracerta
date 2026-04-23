@@ -1239,7 +1239,7 @@ section { padding: 6rem 0; }
 }
 .footer-inner {
   display: grid;
-  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  grid-template-columns: 1.8fr 1fr 1fr;
   gap: 3rem;
   margin-bottom: 2.5rem;
 }
@@ -1575,25 +1575,26 @@ section { padding: 6rem 0; }
   }
 
   .cta-forte-inner p {
-    font-size: 0.88rem;
-    margin-bottom: 1.25rem;
-    line-height: 1.6;
-    text-align: center;
+    display: none;
   }
+
+  #cta-forte .btn-outline { display: none; }
 
   .cta-forte-btns {
     flex-direction: row;
     gap: 0.6rem;
     justify-content: center;
-    flex-wrap: nowrap;
     width: 100%;
   }
 
+  .cta-forte-btns .btn-whatsapp {
+    width: auto;
+    padding: 0.75rem 2rem;
+  }
+
   .cta-forte-btns .btn {
-    flex: 1;
     text-align: center;
     justify-content: center;
-    padding: 0.7rem 0.5rem;
     font-size: 0.82rem;
     white-space: nowrap;
   }
