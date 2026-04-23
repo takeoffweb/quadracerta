@@ -329,4 +329,16 @@ var IMAGENS = {
     mentoriaObserver.observe(mentoriaHeader);
   }
 
+  var portfolioCarousel = document.getElementById('portfolio-carousel');
+  if (portfolioCarousel) {
+    var portfolioDots = document.querySelectorAll('.portfolio-dot');
+    var portfolioIndex = 0;
+    setInterval(function() {
+      portfolioDots[portfolioIndex].classList.remove('active');
+      portfolioIndex = (portfolioIndex + 1) % 3;
+      portfolioCarousel.style.transform = 'translateX(-' + (portfolioIndex * 100) + '%)';
+      portfolioDots[portfolioIndex].classList.add('active');
+    }, 3000);
+  }
+
 })();
