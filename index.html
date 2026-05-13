@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manutenção profissional de quadras de saibro para clubes, condomínios e quadras particulares. Quadra Certa — referência em saibro no Brasil.">
+  <title>Quadra Certa — Manutenção Profissional de Quadras de Saibro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+  <!-- BOTAO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/5554999494556?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Quadra%20Certa%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" class="float-wa" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.525 5.845L0 24l6.335-1.499A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.002-1.371l-.357-.214-3.757.888.931-3.65-.234-.375A9.774 9.774 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/>
+    </svg>
+  </a>
+
+  <!-- =============================================
+       HEADER
+       ============================================= -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="Quadra Certa — início">
+        <img src="img/logo.png" alt="Quadra Certa">
+      </a>
+
+      <nav class="nav" aria-label="Menu principal">
+        <a href="#produtos" data-activate-produto="equipamentos">TQ-10</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#portfolio">Manutenções</a>
+        <a href="#treinamentos">Treinamentos</a>
+
+        <div class="nav-item">
+          <button class="nav-item-btn" aria-expanded="false" aria-haspopup="true">
+            Ebook
+            <svg class="nav-chevron" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown">
+            <a href="https://hotmart.com/pt-br/marketplace/produtos/como-cuidar-da-sua-quadra-de-saibro-guia-pratico-de-manutencao-profissional/N103295677P" target="_blank" rel="noopener noreferrer">🇧🇷 Como cuidar da sua quadra de saibro</a>
+            <a href="https://hotmart.com/es/marketplace/produtos/como-cuidar-su-cancha-de-polvo-de-ladrillo-guia-practica-de-mantenimiento-profesional/I103902357T" target="_blank" rel="noopener noreferrer">🇪🇸 Cómo cuidar su cancha de polvo de ladrillo</a>
+            <a href="https://hotmart.com/en/marketplace/products/how-to-take-care-of-your-clay-tennis-court/R103515601R" target="_blank" rel="noopener noreferrer">🇺🇸 How to take Care of Your Clay Tennis Court</a>
+            <a href="https://hotmart.com/pt-br/marketplace/produtos/faca-voce-mesmo-sua-rede-niveladora-para-sua-quadra/A103332743B" target="_blank" rel="noopener noreferrer">🇧🇷 Faça você mesmo sua rede niveladora</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-item-btn" aria-expanded="false" aria-haspopup="true">
+            Produtos
+            <svg class="nav-chevron" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown">
+            <a href="#produtos">Suporte para sua rede</a>
+            <a href="#produtos" data-activate-produto="equipamentos">TQ-10</a>
+            <a href="#ebooks">Ebooks</a>
+          </div>
+        </div>
+
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://wa.me/5554999494556" target="_blank" style="background-color: #25D366; color: #ffffff; display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.114.549 4.1 1.508 5.836L.057 23.215a.75.75 0 00.921.921l5.379-1.451A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 01-4.952-1.355l-.355-.211-3.664.989.989-3.664-.211-.355A9.726 9.726 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+          </svg>
+          WhatsApp
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENU MOBILE -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobile">
+    <a href="#produtos" data-activate-produto="equipamentos">TQ-10</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#portfolio">Manutenções</a>
+    <a href="#treinamentos">Treinamentos</a>
+
+    <div class="mobile-nav-group">
+      <button class="mobile-nav-group-btn" aria-expanded="false">
+        Ebook
+        <svg class="nav-chevron" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="mobile-nav-sub">
+        <a href="https://hotmart.com/pt-br/marketplace/produtos/como-cuidar-da-sua-quadra-de-saibro-guia-pratico-de-manutencao-profissional/N103295677P" target="_blank" rel="noopener noreferrer">🇧🇷 Como cuidar da sua quadra de saibro</a>
+        <a href="https://hotmart.com/es/marketplace/produtos/como-cuidar-su-cancha-de-polvo-de-ladrillo-guia-practica-de-mantenimiento-profesional/I103902357T" target="_blank" rel="noopener noreferrer">🇪🇸 Cómo cuidar su cancha de polvo de ladrillo</a>
+        <a href="https://hotmart.com/en/marketplace/products/how-to-take-care-of-your-clay-tennis-court/R103515601R" target="_blank" rel="noopener noreferrer">🇺🇸 How to take Care of Your Clay Tennis Court</a>
+        <a href="https://hotmart.com/pt-br/marketplace/produtos/faca-voce-mesmo-sua-rede-niveladora-para-sua-quadra/A103332743B" target="_blank" rel="noopener noreferrer">🇧🇷 Faça você mesmo sua rede niveladora</a>
+      </div>
+    </div>
+
+    <div class="mobile-nav-group">
+      <button class="mobile-nav-group-btn" aria-expanded="false">
+        Produtos
+        <svg class="nav-chevron" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="mobile-nav-sub">
+        <a href="#produtos">Suporte para sua rede</a>
+        <a href="#produtos" data-activate-produto="equipamentos">TQ-10</a>
+        <a href="#ebooks">Ebooks</a>
+      </div>
+    </div>
+
+    <a href="#contato">Contato</a>
+    <a href="https://wa.me/5554999494556" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.525 5.845L0 24l6.335-1.499A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+      WhatsApp
+    </a>
+  </nav>
+
+  <!-- =============================================
+       HERO
+       ============================================= -->
+  <section id="hero" class="hero">
+    <div class="hero-slider" id="hero-slider"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <span class="hero-badge">Referência em quadras de saibro</span>
+        <h1>A Quadra Certa merece,<br><span class="hero-highlight">Cuidado certo.</span></h1>
+        <div class="hero-buttons">
+          <a href="#contato" class="btn btn-primary">Solicitar orçamento</a>
+          <a href="#portfolio" class="btn btn-outline">Conhecer serviços</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <p>Manutenção profissional de quadras de saibro para clubes, condomínios e quadras particulares.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       EQUIPAMENTOS — TQ-10
+       ============================================= -->
+  <section id="equipamentos">
+    <div class="container">
+
+      <div class="tq10-header">
+        <span class="tq10-badge">Equipamento exclusivo</span>
+        <div class="tq10-commercial-title">TQ-10</div>
+        <p class="tq10-commercial-sub">Tecnologia aplicada à manutenção profissional de quadras de saibro.</p>
+        <p class="tq10-commercial-support">Desenvolvido para substituir processos manuais demorados por uma manutenção mais eficiente, uniforme e produtiva.</p>
+      </div>
+
+      <div class="tq10-body">
+
+        <div class="tq10-left-col">
+          <div class="tq10-carousel" id="tq10-carousel"></div>
+        </div>
+
+        <div class="tq10-content">
+
+          <p class="tq10-commercial-body">Durante anos, a manutenção de quadras de saibro foi feita de forma totalmente manual, exigindo esforço físico elevado, muito tempo de execução e resultados inconsistentes.</p>
+
+          <p class="tq10-highlight-phrase">O TQ-10 surgiu para transformar esse processo.</p>
+
+          <p class="tq10-commercial-body">O equipamento foi desenvolvido especificamente para atender as necessidades de manutenção profissional de quadras, oferecendo mais produtividade, nivelamento uniforme e maior eficiência operacional.</p>
+
+          <ul class="tq10-app-list">
+            <li>Remoção de pó compactado e crostas superficiais</li>
+            <li>Eliminação de limo e irregularidades</li>
+            <li>Nivelamento uniforme da superfície</li>
+            <li>Preparação da quadra para acabamento final</li>
+            <li>Atende manutenções leves e pesadas</li>
+          </ul>
+
+          <p class="tq10-commercial-body tq10-commercial-closing">O resultado é uma manutenção mais ágil, econômica e padronizada, reduzindo o tempo operacional e aumentando significativamente a qualidade e produtividade.</p>
+
+          <div class="btn-tq10-wrapper">
+            <a href="https://wa.me/5554999494556?text=Ol%C3%A1!%20Tenho%20interesse%20em%20conhecer%20o%20TQ-10" target="_blank" rel="noopener noreferrer" class="btn btn-tq10">Peça já o seu!</a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SOBRE
+       ============================================= -->
+  <section id="sobre">
+    <div class="container">
+      <div class="about-inner">
+
+        <div class="about-text">
+          <h2 style="margin-bottom: 0.25rem; font-size: clamp(2rem, 3.5vw, 3rem);">Quadra Certa</h2>
+          <p style="font-size: clamp(1rem, 1.8vw, 1.25rem); font-weight: 600; color: var(--text-primary); margin-bottom: 1.25rem; line-height: 1.3;">A referência em saibro no Brasil.</p>
+          <p class="about-mobile-desc">Especialistas em manutenção de quadras de saibro em todo o Brasil. Método próprio, equipamento exclusivo e resultado consistente em cada atendimento.</p>
+          <p>Especialistas em manutenção de quadras de saibro, com atuação em clubes, condomínios e quadras particulares em todo o Brasil.</p>
+          <p>A Quadra Certa desenvolveu um método próprio de manutenção — com equipamento exclusivo, processos definidos e resultado consistente em cada atendimento. Do diagnóstico à execução, cada etapa é conduzida com técnica e responsabilidade.</p>
+          <p>Com o TQ-10, equipamento desenvolvido internamente, entregamos um nivelamento uniforme e eficiente que o trabalho manual não consegue garantir. Tecnologia aplicada diretamente na qualidade da quadra.</p>
+          <a href="https://wa.me/5554999494556?text=Ol%C3%A1!%20Conheci%20a%20Quadra%20Certa%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top: 1.25rem; align-self: flex-start;">
+            Falar com a Quadra Certa →
+          </a>
+        </div>
+
+        <div class="about-image">
+          <picture>
+            <source media="(max-width: 768px)" srcset="img/galeria-01_mobile.png">
+            <img id="sobre-img" src="img/galeria-01.jpeg" alt="Quadra Certa em ação" loading="lazy">
+          </picture>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number">+50</span>
+            <span class="stat-label">Quadras pelo Rio Grande do Sul</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">+8</span>
+            <span class="stat-label">Anos no mercado</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">BR</span>
+            <span class="stat-label">Atuação no Brasil</span>
+          </div>
+        </div>
+
+        <a href="https://wa.me/5554999494556?text=Ol%C3%A1!%20Conheci%20a%20Quadra%20Certa%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos." target="_blank" rel="noopener noreferrer" class="btn btn-outline about-mobile-cta">
+          Falar com a Quadra Certa →
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       CTA FORTE
+       ============================================= -->
+  <section id="cta-forte">
+
+    <!-- QUADRA SVG DE FUNDO -->
+    <svg class="cta-court-svg" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1000" height="560" fill="#b85c2a"/>
+      <!-- Court: 800×380px = 2.105:1, centered at y=280, alleys 18% each side -->
+      <rect x="100" y="90" width="800" height="380" fill="none" stroke="white" stroke-width="5"/>
+      <!-- Singles sidelines: 18% of height = 68px from each edge -->
+      <line x1="100" y1="158" x2="900" y2="158" stroke="white" stroke-width="3"/>
+      <line x1="100" y1="402" x2="900" y2="402" stroke="white" stroke-width="3"/>
+      <!-- Net: vertical at center (x=500), full court height -->
+      <line x1="500" y1="90" x2="500" y2="470" stroke="white" stroke-width="7"/>
+      <!-- Net post marks -->
+      <line x1="492" y1="90" x2="508" y2="90" stroke="white" stroke-width="5"/>
+      <line x1="492" y1="470" x2="508" y2="470" stroke="white" stroke-width="5"/>
+      <!-- Service lines: 53.8% of half-court (400px) = 215px from net -->
+      <line x1="285" y1="158" x2="285" y2="402" stroke="white" stroke-width="3"/>
+      <line x1="715" y1="158" x2="715" y2="402" stroke="white" stroke-width="3"/>
+      <!-- Center service line: at singles width midpoint (y=280) -->
+      <line x1="285" y1="280" x2="715" y2="280" stroke="white" stroke-width="3"/>
+      <!-- Baseline center marks -->
+      <line x1="100" y1="274" x2="100" y2="286" stroke="white" stroke-width="5"/>
+      <line x1="900" y1="274" x2="900" y2="286" stroke="white" stroke-width="5"/>
+    </svg>
+
+    <!-- VINHETA -->
+    <div class="cta-vignette"></div>
+
+    <!-- BOLINHA -->
+    <div class="cta-ball" id="cta-ball" aria-hidden="true"></div>
+    <div class="cta-ball-shadow" aria-hidden="true"></div>
+    <div class="cta-bounce-mark cta-bounce-right" aria-hidden="true"></div>
+    <div class="cta-bounce-mark cta-bounce-left" aria-hidden="true"></div>
+
+    <!-- RAQUETES -->
+    <div class="cta-racket cta-racket-left" aria-hidden="true">
+      <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#ffffff" stroke-width="1" opacity="0.6">
+          <line x1="120" y1="25" x2="120" y2="75"/>
+          <line x1="132" y1="21" x2="132" y2="79"/>
+          <line x1="144" y1="19" x2="144" y2="81"/>
+          <line x1="156" y1="19" x2="156" y2="81"/>
+          <line x1="168" y1="21" x2="168" y2="79"/>
+          <line x1="180" y1="25" x2="180" y2="75"/>
+          <line x1="112" y1="32" x2="184" y2="32"/>
+          <line x1="108" y1="41" x2="188" y2="41"/>
+          <line x1="106" y1="50" x2="190" y2="50"/>
+          <line x1="108" y1="59" x2="188" y2="59"/>
+          <line x1="112" y1="68" x2="184" y2="68"/>
+        </g>
+        <ellipse cx="148" cy="50" rx="44" ry="32" fill="none" stroke="#ffffff" stroke-width="3.5"/>
+        <path d="M 100 50 L 108 39 M 100 50 L 108 61" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <rect x="62" y="46" width="40" height="8" fill="#C4622D" rx="2"/>
+        <rect x="50" y="43" width="16" height="14" fill="#1a1a1a" rx="2"/>
+        <rect x="47" y="44" width="5" height="12" fill="#0a0a0a" rx="1"/>
+      </svg>
+    </div>
+    <div class="cta-racket cta-racket-right" aria-hidden="true">
+      <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#ffffff" stroke-width="1" opacity="0.6">
+          <line x1="120" y1="25" x2="120" y2="75"/>
+          <line x1="132" y1="21" x2="132" y2="79"/>
+          <line x1="144" y1="19" x2="144" y2="81"/>
+          <line x1="156" y1="19" x2="156" y2="81"/>
+          <line x1="168" y1="21" x2="168" y2="79"/>
+          <line x1="180" y1="25" x2="180" y2="75"/>
+          <line x1="112" y1="32" x2="184" y2="32"/>
+          <line x1="108" y1="41" x2="188" y2="41"/>
+          <line x1="106" y1="50" x2="190" y2="50"/>
+          <line x1="108" y1="59" x2="188" y2="59"/>
+          <line x1="112" y1="68" x2="184" y2="68"/>
+        </g>
+        <ellipse cx="148" cy="50" rx="44" ry="32" fill="none" stroke="#ffffff" stroke-width="3.5"/>
+        <path d="M 100 50 L 108 39 M 100 50 L 108 61" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <rect x="62" y="46" width="40" height="8" fill="#C4622D" rx="2"/>
+        <rect x="50" y="43" width="16" height="14" fill="#1a1a1a" rx="2"/>
+        <rect x="47" y="44" width="5" height="12" fill="#0a0a0a" rx="1"/>
+      </svg>
+    </div>
+
+    <!-- OVERLAY TEXTO -->
+    <div class="cta-text-overlay"></div>
+
+    <!-- CONTEÚDO -->
+    <div class="cta-forte-inner">
+      <h2>Sua quadra merece<br>atenção profissional.</h2>
+      <p>Fale com a gente e solicite seu diágnostico<br>Atendemos clubes em todo o Brasil.</p>
+      <div class="cta-forte-btns">
+        <a href="#contato" class="btn btn-primary">Solicitar orçamento</a>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="cta-forte-below">
+    <h2>Sua quadra merece atenção profissional.</h2>
+    <a href="https://wa.me/5554999494556?text=Ol%C3%A1!%20Gostaria%20de%20receber%20um%20diagn%C3%B3stico%20da%20minha%20quadra%20de%20saibro%20sem%20compromisso." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.525 5.845L0 24l6.335-1.499A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.002-1.371l-.357-.214-3.757.888.931-3.65-.234-.375A9.774 9.774 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+
+  <!-- =============================================
+       SERVIÇOS
+       ============================================= -->
+  <section id="portfolio">
+    <div class="container">
+
+      <h2 class="section-title">Nossos Serviços</h2>
+      <p class="section-subtitle">Manutenções profissionais para quadras de saibro.</p>
+
+      <!-- TABS DE NAVEGAÇÃO -->
+      <div class="servicos-tabs" role="tablist" aria-label="Serviços">
+        <button class="servico-tab active" data-tab="raspagem" role="tab" aria-selected="true"><span class="tab-full">Raspagem da quadra</span><span class="tab-short">Raspagem</span></button>
+        <button class="servico-tab" data-tab="fitas" role="tab" aria-selected="false"><span class="tab-full">Troca de fitas</span><span class="tab-short">Troca de fitas</span></button>
+        <button class="servico-tab" data-tab="cabeceiras" role="tab" aria-selected="false"><span class="tab-full">Reforma de cabeceiras</span><span class="tab-short">Cabeceiras</span></button>
+        <button class="servico-tab" data-tab="compactacao" role="tab" aria-selected="false"><span class="tab-full">Compactação</span><span class="tab-short">Compactação</span></button>
+      </div>
+
+      <!-- PAINÉIS DE CONTEÚDO -->
+      <div class="servicos-content">
+
+        <!-- Raspagem -->
+        <div class="servico-panel active" data-panel="raspagem">
+          <div class="servico-layout">
+            <div class="servico-text">
+              <h3 class="servico-title">Raspagem da quadra</h3>
+              <p class="servico-desc">Realizamos a raspagem completa da superfície da quadra, removendo o pó compactado, crostas superficiais e irregularidades acumuladas com o tempo. Ideal para quadras que perderam nivelamento e precisam de uma manutenção mais profunda.</p>
+              <ul class="servico-benefits">
+                <li>Superfície nivelada e uniforme</li>
+                <li>Eliminação de pó compactado e crostas</li>
+                <li>Melhor desempenho durante o jogo</li>
+                <li>Maior durabilidade da quadra</li>
+              </ul>
+              <a href="https://wa.me/5554999494556?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20raspagem%20de%20quadra." target="_blank" rel="noopener noreferrer" class="btn btn-tq10 servico-cta">Solicitar orçamento</a>
+            </div>
+            <div class="servico-media">
+              <div class="servico-slider"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Troca de fitas -->
+        <div class="servico-panel" data-panel="fitas">
+          <div class="servico-layout">
+            <div class="servico-text">
+              <h3 class="servico-title">Troca de fitas</h3>
+              <p class="servico-desc">Realizamos a substituição completa das fitas da quadra, garantindo melhor acabamento, alinhamento e aparência profissional. A fita nova transforma o visual e a delimitação das linhas da quadra.</p>
+              <ul class="servico-benefits">
+                <li>Acabamento uniforme e profissional</li>
+                <li>Melhor delimitação das linhas</li>
+                <li>Visual renovado da quadra</li>
+                <li>Maior durabilidade</li>
+              </ul>
+              <a href="https://wa.me/5554999494556?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20troca%20de%20fitas." target="_blank" rel="noopener noreferrer" class="btn btn-tq10 servico-cta">Solicitar orçamento</a>
+            </div>
+            <div class="servico-media">
+              <div class="servico-slider"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reforma de cabeceiras -->
+        <div class="servico-panel" data-panel="cabeceiras">
+          <div class="servico-layout">
+            <div class="servico-text">
+              <h3 class="servico-title">Reforma de cabeceiras</h3>
+              <p class="servico-desc">Recuperamos as cabeceiras da quadra com técnica e qualidade, devolvendo estrutura, nivelamento e apresentação à área de fundo da quadra. Serviço essencial para quadras com desgaste nas extremidades.</p>
+              <ul class="servico-benefits">
+                <li>Estrutura recuperada e nivelada</li>
+                <li>Alinhamento correto com a quadra</li>
+                <li>Visual renovado nas extremidades</li>
+                <li>Acabamento profissional</li>
+              </ul>
+              <a href="https://wa.me/5554999494556?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20reforma%20de%20cabeceiras." target="_blank" rel="noopener noreferrer" class="btn btn-tq10 servico-cta">Solicitar orçamento</a>
+            </div>
+            <div class="servico-media">
+              <div class="servico-slider"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compactação -->
+        <div class="servico-panel" data-panel="compactacao">
+          <div class="servico-layout">
+            <div class="servico-text">
+              <h3 class="servico-title">Compactação</h3>
+              <p class="servico-desc">Realizamos a compactação adequada do saibro, garantindo uma superfície firme, resistente e com boa aderência para a prática esportiva. Essencial após qualquer manutenção para consolidar o resultado final.</p>
+              <ul class="servico-benefits">
+                <li>Superfície firme e resistente</li>
+                <li>Melhor aderência e tração</li>
+                <li>Menor desgaste superficial</li>
+                <li>Maior vida útil da quadra</li>
+              </ul>
+              <a href="https://wa.me/5554999494556?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20compacta%C3%A7%C3%A3o%20de%20quadra." target="_blank" rel="noopener noreferrer" class="btn btn-tq10 servico-cta">Solicitar orçamento</a>
+            </div>
+            <div class="servico-media">
+              <div class="servico-slider"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="portfolio-testimonials">
+        <h3 class="testimonials-title">O que dizem os clientes.</h3>
+        <div class="testimonials-grid">
+
+          <div class="testimonial-card active">
+            <div class="testimonial-avatar">MR</div>
+            <p class="testimonial-text">"..."</p>
+            <em class="testimonial-name">Marcos Rodrigues</em>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">CA</div>
+            <p class="testimonial-text">"..."</p>
+            <em class="testimonial-name">Carla Andrade</em>
+          </div>
+
+        </div>
+        <div class="testimonials-dots">
+          <button class="testimonials-dot active" data-idx="0" aria-label="Depoimento 1"></button>
+          <button class="testimonials-dot" data-idx="1" aria-label="Depoimento 2"></button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============================================
+       TREINAMENTOS
+       ============================================= -->
+  <section id="treinamentos">
+  <div class="container">
+
+    <div class="mentoria-header">
+      <h2 class="mentoria-main-title">Mentoria profissional para quadras de saibro</h2>
+      <p class="mentoria-subtitle">Aplicação real para manter sua quadra sempre em alto nível.</p>
+    </div>
+
+    <div class="mentoria-inner">
+
+      <div class="mentoria-image">
+        <span class="mentoria-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><circle cx="12" cy="8" r="6"/><path d="M9 21l3-3 3 3M12 18v-5"/></svg>
+          Certificado incluso
+        </span>
+        <div class="mentoria-slider"></div>
+      </div>
+
+      <div class="mentoria-content">
+        <div class="mentoria-cards">
+
+          <div class="mentoria-card">
+            <div class="mentoria-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="mentoria-card-text">
+              <strong>Cuidados diários</strong>
+              <span>Rotina que preserva a qualidade do saibro</span>
+            </div>
+          </div>
+
+          <div class="mentoria-card">
+            <div class="mentoria-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="mentoria-card-text">
+              <strong>Boas práticas de manutenção</strong>
+              <span>Técnicas para manter o pó solto e uniforme</span>
+            </div>
+          </div>
+
+          <div class="mentoria-card">
+            <div class="mentoria-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <div class="mentoria-card-text">
+              <strong>Prevenção de buracos e desgaste</strong>
+              <span>Identificar e corrigir antes que se agravem</span>
+            </div>
+          </div>
+
+          <div class="mentoria-card">
+            <div class="mentoria-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+            </div>
+            <div class="mentoria-card-text">
+              <strong>Ajustes conforme clima e estação</strong>
+              <span>Adaptações práticas para cada condição</span>
+            </div>
+          </div>
+
+          <div class="mentoria-card">
+            <div class="mentoria-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </div>
+            <div class="mentoria-card-text">
+              <strong>Quadras internas e externas</strong>
+              <span>Cuidados específicos para cada tipo</span>
+            </div>
+          </div>
+
+        </div>
+
+        <a href="https://wa.me/5554999494556?text=Ol%C3%A1!%20Tenho%20interesse%20em%20agendar%20uma%20mentoria%20profissional%20para%20manuten%C3%A7%C3%A3o%20de%20quadra%20de%20saibro." target="_blank" rel="noopener noreferrer" class="btn btn-primary mentoria-cta">
+          Agendar minha mentoria →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- =============================================
+       PRODUTOS
+       ============================================= -->
+  <section id="produtos">
+    <div class="container">
+
+      <h2 class="section-title">Produtos</h2>
+      <p class="section-subtitle">Equipamentos e acessórios para quem leva a quadra a sério.</p>
+
+      <!-- TABS -->
+      <div class="produtos-tabs" role="tablist" aria-label="Categorias de produtos">
+        <button class="produto-tab active" data-tab="acessorios" role="tab" aria-selected="true">Acessórios</button>
+        <button class="produto-tab" data-tab="equipamentos" role="tab" aria-selected="false">Equipamentos</button>
+      </div>
+
+      <!-- PAINÉIS -->
+      <div class="produtos-content">
+
+        <!-- ACESSÓRIOS -->
+        <div class="produto-panel active" data-panel="acessorios">
+          <div class="produto-showcase">
+
+            <div class="produto-visual">
+              <div class="produto-img-wrap">
+                <div class="produto-slider"></div>
+                <span class="produto-tag">Acessório</span>
+              </div>
+            </div>
+
+            <div class="produto-header">
+              <span class="produto-cat-label">Acessório</span>
+              <h3 class="produto-titulo">Suporte de Rede para Celular</h3>
+            </div>
+            <div class="produto-body">
+              <div class="produto-descricao">
+                <p>Grave seus jogos de forma prática e rápida diretamente da quadra.</p>
+                <p>O suporte foi desenvolvido para fixar o celular com segurança na rede da quadra, permitindo capturar treinos, partidas e conteúdos com estabilidade e praticidade.</p>
+                <p>Basta posicionar o suporte na rede, encaixar o celular e começar a gravar.</p>
+              </div>
+              <ul class="produto-beneficios">
+                <li>Instalação rápida</li>
+                <li>Fixação prática e segura</li>
+                <li>Mais estabilidade para gravações</li>
+                <li>Ideal para treinos e partidas</li>
+                <li>Portátil e leve</li>
+              </ul>
+              <a href="https://wa.me/5554999494556?text=Ol%C3%A1!%20Gostaria%20de%20comprar%20o%20Suporte%20de%20Rede%20para%20Celular." target="_blank" rel="noopener noreferrer" class="btn btn-tq10">Comprar</a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- EQUIPAMENTOS -->
+        <div class="produto-panel" data-panel="equipamentos">
+          <div class="produto-showcase">
+
+            <div class="produto-visual">
+              <div class="produto-img-wrap">
+                <div class="produto-slider"></div>
+                <span class="produto-tag">Equipamento</span>
+              </div>
+            </div>
+
+            <div class="produto-header">
+              <span class="produto-cat-label">Equipamento</span>
+              <h3 class="produto-titulo">TQ-10</h3>
+            </div>
+            <div class="produto-body">
+              <div class="produto-descricao">
+                <p>A máquina desenvolvida pela Quadra Certa para transformar a manutenção de quadras de saibro.</p>
+                <p>O TQ-10 oferece mais produtividade, nivelamento uniforme e eficiência operacional — substituindo processos manuais demorados por uma manutenção mais ágil, padronizada e profissional.</p>
+              </div>
+              <ul class="produto-beneficios">
+                <li>Nivelamento uniforme da superfície</li>
+                <li>Alta produtividade operacional</li>
+                <li>Redução significativa do tempo de manutenção</li>
+                <li>Atende manutenções leves e pesadas</li>
+                <li>Equipamento exclusivo Quadra Certa</li>
+              </ul>
+              <a href="https://wa.me/5554999494556?text=Ol%C3%A1!%20Tenho%20interesse%20em%20conhecer%20o%20TQ-10" target="_blank" rel="noopener noreferrer" class="btn btn-tq10">Solicitar demonstração</a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       EBOOKS / GUIAS PROFISSIONAIS
+       ============================================= -->
+  <section id="ebooks">
+    <div class="container">
+      <h2 class="section-title">Guias profissionais</h2>
+      <p class="section-subtitle">E-books profissionais de manutenções de quadras de saibro em 3 idiomas<br> para quem leva a quadra a sério em qualquer lugar do mundo.</p>
+
+      <div class="ebooks-layout">
+
+        <div class="ebooks-visual" id="ebooks-visual">
+          <div class="ebook-display-wrapper">
+            <img class="ebook-display-img" id="ebook-display-img" src="img/ebook-pt.png" alt="Ebook em destaque">
+          </div>
+        </div>
+
+        <div class="ebooks-grid">
+
+          <div class="ebook-card" data-ebook="img/ebook-pt.png">
+            <svg class="ebook-icon" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            <span class="ebook-lang">Português</span>
+            <h3>Como cuidar da sua quadra de saibro</h3>
+            <a href="https://hotmart.com/pt-br/marketplace/produtos/como-cuidar-da-sua-quadra-de-saibro-guia-pratico-de-manutencao-profissional/N103295677P" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Comprar</a>
+          </div>
+
+          <div class="ebook-card" data-ebook="img/ebook-esp.png">
+            <svg class="ebook-icon" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            <span class="ebook-lang">Español</span>
+            <h3>Cómo cuidar su cancha de polvo de ladrillo</h3>
+            <a href="https://hotmart.com/es/marketplace/produtos/como-cuidar-su-cancha-de-polvo-de-ladrillo-guia-practica-de-mantenimiento-profesional/I103902357T" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Comprar</a>
+          </div>
+
+          <div class="ebook-card" data-ebook="img/ebook-en.png">
+            <svg class="ebook-icon" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            <span class="ebook-lang">English</span>
+            <h3>How to take Care of Your Clay Tennis Court</h3>
+            <a href="https://hotmart.com/en/marketplace/products/how-to-take-care-of-your-clay-tennis-court/R103515601R" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Comprar</a>
+          </div>
+
+          <div class="ebook-card" data-ebook="img/ebook-rede.png">
+            <svg class="ebook-icon" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            <span class="ebook-lang">Português</span>
+            <h3>Faça você mesmo sua rede niveladora para sua quadra</h3>
+            <a href="https://hotmart.com/pt-br/marketplace/produtos/faca-voce-mesmo-sua-rede-niveladora-para-sua-quadra/A103332743B" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Comprar</a>
+          </div>
+
+          <div class="ebook-carousel-wrapper">
+            <button class="ebook-arrow ebook-arrow-left" aria-label="Anterior">&#8249;</button>
+            <div class="ebook-carousel-track" id="ebook-track">
+              <div class="ebook-carousel-item" data-index="0" data-href="https://hotmart.com/pt-br/marketplace/produtos/como-cuidar-da-sua-quadra-de-saibro-guia-pratico-de-manutencao-profissional/N103295677P">
+                <div class="ebook-card-cover"><img src="img/ebook-pt.png" alt="Ebook Português"></div>
+              </div>
+              <div class="ebook-carousel-item" data-index="1" data-href="https://hotmart.com/es/marketplace/produtos/como-cuidar-su-cancha-de-polvo-de-ladrillo-guia-practica-de-mantenimiento-profesional/I103902357T">
+                <div class="ebook-card-cover"><img src="img/ebook-esp.png" alt="Ebook Español"></div>
+              </div>
+              <div class="ebook-carousel-item" data-index="2" data-href="https://hotmart.com/en/marketplace/products/how-to-take-care-of-your-clay-tennis-court/R103515601R">
+                <div class="ebook-card-cover"><img src="img/ebook-en.png" alt="Ebook English"></div>
+              </div>
+              <div class="ebook-carousel-item" data-index="3" data-href="https://hotmart.com/pt-br/marketplace/produtos/faca-voce-mesmo-sua-rede-niveladora-para-sua-quadra/A103332743B">
+                <div class="ebook-card-cover"><img src="img/ebook-rede.png" alt="Ebook Rede Niveladora"></div>
+              </div>
+            </div>
+            <button class="ebook-arrow ebook-arrow-right" aria-label="Próximo">&#8250;</button>
+          </div>
+
+          <div class="ebook-carousel-cta">
+            <a href="#" id="ebook-cta-btn" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Adquira já o seu</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       CONTATO
+       ============================================= -->
+  <section id="contato">
+    <div class="container">
+      <h2 class="section-title">Fale com a gente. Sem enrolação.</h2>
+      <p class="section-subtitle">Preencha o formulário e entraremos em contato pelo WhatsApp.</p>
+
+      <div class="contact-wrap">
+        <form class="contact-form" id="contact-form" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" name="cidade" placeholder="Sua cidade" autocomplete="address-level2">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="tipo">Tipo de quadra</label>
+            <select id="tipo" name="tipo">
+              <option value="" disabled selected>Selecione o tipo</option>
+              <option value="Clube">Clube</option>
+              <option value="Condomínio">Condomínio</option>
+              <option value="Quadra particular">Quadra particular</option>
+              <option value="Escola de tênis">Escola de tênis</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre sua quadra e o que precisa..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; font-size:1rem; padding:1rem 1.75rem; text-align:center; justify-content:center;">
+            Enviar formulário
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FOOTER
+       ============================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand footer-col">
+          <img src="img/quadracerta1.png" alt="Quadra Certa">
+          <p>Especialistas em manutenção de quadras de saibro. Brasil e exterior.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Produtos</h4>
+          <ul>
+            <li><a href="#produtos" onclick="setTimeout(function(){document.querySelector('[data-filter=&quot;equipamento&quot;]').click();},400)">Equipamentos</a></li>
+            <li><a href="#produtos" onclick="setTimeout(function(){document.querySelector('[data-filter=&quot;ebooks&quot;]').click();},400)">Ebooks</a></li>
+            <li><a href="#produtos" onclick="setTimeout(function(){document.querySelector('[data-filter=&quot;acessorios&quot;]').click();},400)">Acessórios</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="https://wa.me/5554999494556?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Quadra%20Certa%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/quadracerta" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@quadra.certa" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Quadra Certa. Todos os direitos reservados.</p>
+        <img src="img/brasil.png" alt="Bandeira do Brasil" width="32" height="22" style="margin-top: 0.5rem; border-radius: 3px; display: block;">
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
