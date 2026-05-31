@@ -20,7 +20,6 @@ var IMAGENS = {
     { src: 'img/hero-01.jpg',   mobile: 'img/hero-01_mobile.png' },
     { src: 'img/hero-02.mp4',   type: 'video' },
     { src: 'img/hero-03.png',   mobile: 'img/hero-03_mobile.png' },
-    { src: 'img/hero-04.png'    /* sem versão mobile, usa mesma imagem */ }
   ],
 
   /* ---- TQ-10 (carrossel da seção Equipamentos) ---- */
@@ -107,6 +106,8 @@ var IMAGENS = {
   function buildVideo(item) {
     var vid = document.createElement('video');
     vid.src = item.src;
+    vid.setAttribute('preload', 'metadata');
+    vid.setAttribute('poster', 'img/hero-01.jpg');
     vid.muted = true;
     vid.setAttribute('playsinline', '');
     if (item.loop) { vid.loop = true; vid.autoplay = true; }
@@ -450,6 +451,8 @@ if (heroSlides.length > 1) {
       /* fecha menu mobile se estiver aberto */
       var mobileNav = document.getElementById('mobile-nav');
       if (mobileNav && mobileNav.classList.contains('open')) mobileNav.classList.remove('open');
+      var hamburger = document.getElementById('hamburger');
+      if (hamburger) { hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); }
     });
   });
 
