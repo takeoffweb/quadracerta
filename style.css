@@ -2210,7 +2210,7 @@ section { padding: 6rem 0; }
   .cta-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.5) 100%); z-index: 1; }
   .cta-ball { display: block; width: 12px; height: 12px; animation: ball-rally 6s linear infinite, ball-spin 0.25s linear infinite; }
   .cta-ball-shadow { display: block; animation: ball-shadow-rally 6s linear infinite; }
-  .cta-racket { width: 60px; height: 30px; top: calc(57% - 9px); }
+  .cta-racket { width: 42px; height: 21px; top: calc(57% - 6px); }
   .cta-racket-left { left: calc(16% - 44px); animation: racket-left-swing 6s linear infinite; }
   .cta-racket-right { left: calc(84% - 16px); animation: racket-right-swing 6s linear infinite; }
   .cta-bounce-mark { display: none; }
@@ -2219,7 +2219,7 @@ section { padding: 6rem 0; }
   .cta-forte-inner p { display: none; }
   .cta-forte-btns { position: static; transform: none; justify-content: center; width: auto; }
   #cta-forte .btn-outline { display: none; }
-  #cta-forte .btn-whatsapp { width: fit-content; padding: 0.9rem 2rem; font-size: 0.93rem; flex: unset; }
+  #cta-forte .btn-whatsapp { width: fit-content; padding: 0.6rem 1.4rem; font-size: 0.82rem; flex: unset; }
   .cta-forte-below { display: none !important; }
   .cta-text-overlay { background: radial-gradient(ellipse 80% 75% at 50% 50%, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0) 100%); }
 
