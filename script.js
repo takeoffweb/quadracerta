@@ -439,7 +439,11 @@ if (heroSlides.length > 1) {
 
   if (produtoTabs.length) {
     var firstProdPanel = document.querySelector('.produto-panel.active');
-    if (firstProdPanel) startProdutoSlider(firstProdPanel);
+    if (firstProdPanel) {
+      onFirstView(document.getElementById('produtos'), function() {
+        startProdutoSlider(firstProdPanel);
+      }, { threshold: 0, rootMargin: '0px 0px -25% 0px' });
+    }
 
     produtoTabs.forEach(function(tab) {
       tab.addEventListener('click', function() {
@@ -514,11 +518,11 @@ if (heroSlides.length > 1) {
   });
 
   /* ---- UTILITARIO: inicia carrossel ao entrar na tela pela 1ª vez ---- */
-  function onFirstView(el, callback) {
+  function onFirstView(el, callback, opts) {
     if (!el) { callback(); return; }
     var obs = new IntersectionObserver(function(entries) {
       if (entries[0].isIntersecting) { obs.disconnect(); callback(); }
-    }, { threshold: 0.25 });
+    }, opts || { threshold: 0.25 });
     obs.observe(el);
   }
 
@@ -601,7 +605,7 @@ if (heroSlides.length > 1) {
       } else {
         setTimeout(mentoriaNext, 4000);
       }
-    });
+    }, { threshold: 0, rootMargin: '0px 0px -25% 0px' });
   }
 
   /* ---- EBOOK DISPLAY SLIDER COM GSAP ---- */
