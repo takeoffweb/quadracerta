@@ -18,7 +18,7 @@ var IMAGENS = {
   /* ---- HERO (slider de entrada) ---- */
   hero: [
     { src: 'img/hero-01.jpg',   mobile: 'img/hero-01_mobile.png' },
-    { src: 'img/hero-02.mp4',   type: 'video' },
+    { src: 'img/hero-02.mp4',   type: 'video', fallback: 'img/hero-07_mobile.png' },
     { src: 'img/hero-03.png',   mobile: 'img/hero-03_mobile.png' },
   ],
 
@@ -134,6 +134,7 @@ var IMAGENS = {
       vid.autoplay = true;
       vid.loop = false;
       div.appendChild(vid);
+      if (item.fallback) div.dataset.fallback = item.fallback;
     } else {
       var src = (isMobile && item.mobile) ? item.mobile : item.src;
       div.style.backgroundImage = 'url(' + src + ')';
@@ -338,14 +339,19 @@ function heroGoTo(n) {
   dots[heroIndex].classList.add('active');
   var vid = heroSlides[heroIndex].querySelector('video');
   if (vid) {
+    var slide = heroSlides[heroIndex];
+    vid.style.display = '';
+    slide.style.backgroundImage = '';
     vid.currentTime = 0;
     safePlay(vid, function() {
-      /* play bloqueado (ex: Low Power Mode no iOS) — pula para o próximo slide */
-      heroSlides[heroIndex].classList.remove('active');
-      dots[heroIndex].classList.remove('active');
-      heroIndex = (heroIndex + 1) % heroSlides.length;
-      heroSlides[heroIndex].classList.add('active');
-      dots[heroIndex].classList.add('active');
+      /* play bloqueado (ex: Low Power Mode no iOS) — exibe imagem de fallback */
+      var fallback = slide.dataset.fallback;
+      if (fallback) {
+        vid.style.display = 'none';
+        slide.style.backgroundImage    = 'url(' + fallback + ')';
+        slide.style.backgroundSize     = 'cover';
+        slide.style.backgroundPosition = 'center 30%';
+      }
     });
   }
 }
