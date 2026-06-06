@@ -339,20 +339,36 @@ function heroGoTo(n) {
   dots[heroIndex].classList.add('active');
   var vid = heroSlides[heroIndex].querySelector('video');
   if (vid) {
-    var slide = heroSlides[heroIndex];
+    var slide    = heroSlides[heroIndex];
+    var fallback = slide.dataset.fallback;
+    var fallbackShown = false;
+
+    function showHeroFallback() {
+      if (!fallback || fallbackShown) return;
+      fallbackShown = true;
+      vid.style.display = 'none';
+      slide.style.backgroundImage    = 'url(' + fallback + ')';
+      slide.style.backgroundSize     = 'cover';
+      slide.style.backgroundPosition = 'center 30%';
+    }
+
     vid.style.display = '';
     slide.style.backgroundImage = '';
     vid.currentTime = 0;
-    safePlay(vid, function() {
-      /* play bloqueado (ex: Low Power Mode no iOS) — exibe imagem de fallback */
-      var fallback = slide.dataset.fallback;
-      if (fallback) {
-        vid.style.display = 'none';
-        slide.style.backgroundImage    = 'url(' + fallback + ')';
-        slide.style.backgroundSize     = 'cover';
-        slide.style.backgroundPosition = 'center 30%';
-      }
-    });
+
+    /* Caminho 1: Promise rejeitada imediatamente (NotAllowedError típico) */
+    safePlay(vid, showHeroFallback);
+
+    /* Caminho 2: iOS pode resolver o Promise mas não iniciar o vídeo —
+       verifica após 800ms se ainda está pausado */
+    if (fallback) {
+      var fbTimer = setTimeout(function() {
+        if (vid.paused) showHeroFallback();
+      }, 800);
+      vid.addEventListener('playing', function() {
+        clearTimeout(fbTimer);
+      }, { once: true });
+    }
   }
 }
 
