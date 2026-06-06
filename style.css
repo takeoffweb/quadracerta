@@ -2326,8 +2326,10 @@ section { padding: 6rem 0; }
   .footer-bottom { font-size: 0.78rem; }
 
   /* ---- IG TESTIMONIALS ---- */
-  .ig-featured { grid-template-columns: 1fr; gap: 0.6rem; }
-  .ig-card { padding: 1rem; }
+  .ig-featured { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+  .ig-card.ig-hero { grid-column: 1 / -1; }
+  .ig-card { padding: 0.75rem; }
+  .ig-text { font-size: 0.8rem; }
   .ig-card-sm { flex: 0 0 230px; }
   .ig-marquee-track { animation-duration: 35s; }
   .ig-sub { font-size: 0.88rem; padding: 0 1rem; }
