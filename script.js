@@ -2,7 +2,7 @@
    QUADRA CERTA — SCRIPTS
    ============================================= */
 
-var isMobile = window.innerWidth <= 768;
+var isMobile = window.innerWidth <= 768 || (window.screen && window.screen.width <= 768);
 
 /* =============================================
    MÍDIAS DO SITE — edite aqui para adicionar/remover fotos e vídeos
@@ -109,9 +109,17 @@ var IMAGENS = {
     vid.setAttribute('preload', 'metadata');
     vid.setAttribute('poster', 'img/hero-01.jpg');
     vid.muted = true;
+    vid.setAttribute('muted', '');              /* atributo HTML — exigido pelo iOS Safari para autoplay */
     vid.setAttribute('playsinline', '');
-    if (item.loop) { vid.loop = true; vid.autoplay = true; }
+    vid.setAttribute('webkit-playsinline', ''); /* iOS antigo */
+    if (item.loop) { vid.loop = true; vid.setAttribute('autoplay', ''); }
     return vid;
+  }
+
+  function safePlay(vid) {
+    if (!vid) return;
+    var p = vid.play();
+    if (p && typeof p.catch === 'function') p.catch(function() {});
   }
 
   /* ---- HERO ---- */
@@ -327,7 +335,7 @@ function heroGoTo(n) {
   heroSlides[heroIndex].classList.add('active');
   dots[heroIndex].classList.add('active');
   var vid = heroSlides[heroIndex].querySelector('video');
-  if (vid) { vid.currentTime = 0; vid.play(); }
+  if (vid) { vid.currentTime = 0; safePlay(vid); }
 }
 
 // Troca automática: 6900ms no slide de vídeo, 5000ms nos de imagem
@@ -361,7 +369,7 @@ if (heroSlides.length > 1) {
       var video = slides[idx].querySelector('video');
       if (video) {
         video.currentTime = 0;
-        video.play();
+        safePlay(video);
         produtoSliderVideo = video;
         video._onEnded = advance;
         video.addEventListener('ended', video._onEnded, { once: true });
@@ -474,7 +482,7 @@ if (heroSlides.length > 1) {
       tq10Index = (tq10Index + 1) % tq10Slides.length;
       tq10Slides[tq10Index].classList.add('active');
       var el = tq10Slides[tq10Index].querySelector('img, video');
-      if (el.tagName === 'VIDEO') { el.currentTime = 0; el.play(); }
+      if (el.tagName === 'VIDEO') { el.currentTime = 0; safePlay(el); }
       var dur = parseInt(el.dataset.duration, 10);
       setTimeout(tq10Next, dur);
     }
@@ -510,7 +518,7 @@ if (heroSlides.length > 1) {
       var video = currentSlide.querySelector('video');
       if (video) {
         video.currentTime = 0;
-        video.play();
+        safePlay(video);
         if (!video.loop) {
           setTimeout(mentoriaNext, 6000);
           return;
@@ -522,7 +530,7 @@ if (heroSlides.length > 1) {
     onFirstView(document.getElementById('treinamentos'), function() {
       var firstVideo = mentoriaSlides[0].querySelector('video');
       if (firstVideo && !firstVideo.loop) {
-        firstVideo.play();
+        safePlay(firstVideo);
         setTimeout(mentoriaNext, 6000);
       } else {
         setTimeout(mentoriaNext, 4000);
