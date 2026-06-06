@@ -116,10 +116,12 @@ var IMAGENS = {
     return vid;
   }
 
-  function safePlay(vid) {
+  function safePlay(vid, onFail) {
     if (!vid) return;
     var p = vid.play();
-    if (p && typeof p.catch === 'function') p.catch(function() {});
+    if (p && typeof p.catch === 'function') {
+      p.catch(function() { if (onFail) onFail(); });
+    }
   }
 
   /* ---- HERO ---- */
@@ -335,7 +337,17 @@ function heroGoTo(n) {
   heroSlides[heroIndex].classList.add('active');
   dots[heroIndex].classList.add('active');
   var vid = heroSlides[heroIndex].querySelector('video');
-  if (vid) { vid.currentTime = 0; safePlay(vid); }
+  if (vid) {
+    vid.currentTime = 0;
+    safePlay(vid, function() {
+      /* play bloqueado (ex: Low Power Mode no iOS) — pula para o próximo slide */
+      heroSlides[heroIndex].classList.remove('active');
+      dots[heroIndex].classList.remove('active');
+      heroIndex = (heroIndex + 1) % heroSlides.length;
+      heroSlides[heroIndex].classList.add('active');
+      dots[heroIndex].classList.add('active');
+    });
+  }
 }
 
 // Troca automática: 6900ms no slide de vídeo, 5000ms nos de imagem
