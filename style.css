@@ -1655,7 +1655,7 @@ section { padding: 6rem 0; }
 .ig-text-sm { color: var(--text-muted); font-size: 0.78rem; line-height: 1.4; margin: 0; }
 
 /* ---- ATENDEMOS STRIP ---- */
-.atendemos-strip { margin-top: 3rem; padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.07); }
+.atendemos-strip { padding: 2rem 0; background: var(--bg-primary); }
 .atendemos-subtitle { text-align: center; color: var(--text-muted); font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 1.25rem; }
 .atendemos-wrapper { overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); }
 .atendemos-track { display: flex; gap: 3rem; width: fit-content; animation: atendemos-scroll 35s linear infinite; }
