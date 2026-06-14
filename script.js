@@ -479,37 +479,6 @@ if (heroSlides.length > 1) {
     });
   }
 
-  /* ---- CARROSSEL DE DEPOIMENTOS ---- */
-  var testCards = document.querySelectorAll('.testimonial-card');
-  var testDots  = document.querySelectorAll('.testimonials-dot');
-  var testIdx   = 0;
-  var testTimer = null;
-
-  function showTestimonial(idx) {
-    testCards.forEach(function(c) { c.classList.remove('active'); });
-    testDots.forEach(function(d)  { d.classList.remove('active'); });
-    testCards[idx].classList.add('active');
-    if (testDots[idx]) testDots[idx].classList.add('active');
-    testIdx = idx;
-  }
-
-  function startTestimonialCarousel() {
-    clearInterval(testTimer);
-    testTimer = setInterval(function() {
-      showTestimonial((testIdx + 1) % testCards.length);
-    }, 4000);
-  }
-
-  if (testCards.length > 1) {
-    startTestimonialCarousel();
-    testDots.forEach(function(dot) {
-      dot.addEventListener('click', function() {
-        showTestimonial(parseInt(this.dataset.idx));
-        startTestimonialCarousel();
-      });
-    });
-  }
-
   /* ---- NAV: links que ativam uma aba de produto específica ---- */
   document.querySelectorAll('[data-activate-produto]').forEach(function(link) {
     link.addEventListener('click', function(e) {
@@ -734,7 +703,6 @@ if (heroSlides.length > 1) {
 
   /* ---- MENTORIA — SCROLL TRIGGER ---- */
   var mentoriaHeader = document.querySelector('.mentoria-header');
-  var mentoriaItems  = document.querySelectorAll('.mentoria-list li');
   if (mentoriaHeader) {
     var mentoriaObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
