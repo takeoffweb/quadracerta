@@ -4,6 +4,11 @@
 
 var isMobile = window.innerWidth <= 768 || (window.screen && window.screen.width <= 768);
 
+/* ---- BLOQUEIO DE PINCH-ZOOM (iOS ignora user-scalable=no) ---- */
+['gesturestart', 'gesturechange', 'gestureend'].forEach(function (evt) {
+  document.addEventListener(evt, function (e) { e.preventDefault(); }, { passive: false });
+});
+
 /* =============================================
    MÍDIAS DO SITE — edite aqui para adicionar/remover fotos e vídeos
    Campos disponíveis por item:
