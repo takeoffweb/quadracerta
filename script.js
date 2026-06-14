@@ -224,13 +224,23 @@ var IMAGENS = {
   });
 
   /* ---- HEADER: efeito scroll ---- */
-  var header = document.getElementById('header');
+  var header  = document.getElementById('header');
+  var floatWa = document.querySelector('.float-wa');
+  var heroEl  = document.getElementById('hero');
 
   window.addEventListener('scroll', function () {
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
+    }
+    if (window.innerWidth <= 768 && floatWa && heroEl) {
+      var threshold = heroEl.offsetHeight * 0.8;
+      if (window.scrollY > threshold) {
+        floatWa.classList.add('wa-visible');
+      } else {
+        floatWa.classList.remove('wa-visible');
+      }
     }
   }, { passive: true });
 
