@@ -1767,7 +1767,7 @@ section { padding: 6rem 0; }
   .hero-dots { position: absolute; bottom: 1.5rem; left: 0; right: 0; display: flex; justify-content: center; gap: 8px; z-index: 4; margin-top: 0; }
 
   /* ---- FLOAT WHATSAPP ---- */
-  .float-wa { bottom: 2.5rem; opacity: 0 !important; visibility: hidden !important; transform: translateY(20px) !important; pointer-events: none !important; transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease; }
+  .float-wa { bottom: 1rem; opacity: 0 !important; visibility: hidden !important; transform: translateY(20px) !important; pointer-events: none !important; transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease; }
   .float-wa.wa-visible { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
 
   /* ---- SERVIÇOS ---- */
